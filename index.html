@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#09090D">
+<title>VEQTRO AI — Growth Infrastructure</title>
+<meta name="description" content="Capture, qualify and close leads in under 10 seconds. WhatsApp speed engine, 60-second estimators, offline field sales PWA, two-way CRM sync.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{--bg:#09090D;--sf:#101017;--cu:#C87D3B;--am:#EAA873;--ink:#F5EFEB;--soft:#9B958F;--ln:rgba(200,125,59,.18);
+--gut:clamp(1.25rem,5vw,4rem);--sec:clamp(4rem,9vw,7.5rem);
+--d:'Bebas Neue',Impact,sans-serif;--b:'Outfit',system-ui,sans-serif;--m:'DM Mono',ui-monospace,monospace}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;overflow-x:clip;scroll-padding-top:5rem}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--b);letter-spacing:.01em;overflow-x:clip}
+h1,h2,h3{font-family:var(--d);font-weight:400;letter-spacing:.02em;line-height:1;text-wrap:balance}
+p{text-wrap:pretty;max-width:62ch;color:var(--soft)}
+:focus-visible{outline:3px solid var(--am);outline-offset:3px;border-radius:4px}
+.mono{font:400 .78rem var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--am)}
+.wrap{padding:var(--sec) var(--gut);max-width:1240px;margin:0 auto}
+.wm{font-family:var(--d);letter-spacing:.22em;padding-left:.22em;line-height:1;background:linear-gradient(90deg,#FFF9F2 0%,#F6D6B6 32%,#E2A36C 64%,#B8692E 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 6px 22px rgba(200,125,59,.22))}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.7rem 1.6rem;border-radius:999px;font:500 1rem var(--b);text-decoration:none;color:var(--ink);border:1px solid var(--cu);background:none;cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}
+.b1{background:var(--cu);color:var(--bg)}.b1:hover{background:var(--am)}
+.b2:hover{background:rgba(200,125,59,.12)}
+nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:calc(.7rem + env(safe-area-inset-top,0px)) var(--gut) .7rem;transition:background .2s,border-color .2s;border-bottom:1px solid transparent}
+nav.on{background:rgba(9,9,13,.82);backdrop-filter:blur(10px);border-color:var(--ln)}
+nav .wm{font-size:1.6rem;letter-spacing:.26em;filter:none}
+nav .btn{min-height:44px;padding:.45rem 1.2rem;font-size:.9rem}
+.hero{position:relative;overflow:hidden;isolation:isolate}
+.grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(200,125,59,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(200,125,59,.06) 1px,transparent 1px);background-size:54px 54px;-webkit-mask-image:radial-gradient(70% 60% at 50% 30%,#000,transparent 75%);mask-image:radial-gradient(70% 60% at 50% 30%,#000,transparent 75%)}
+#orb{position:absolute;inset:0;z-index:1;width:100%;height:100%;display:block}
+.hero-in{position:relative;z-index:2;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6.5rem var(--gut) 3rem}
+.logo{position:relative;display:grid;justify-items:center;gap:clamp(.9rem,2vw,1.5rem);width:100%}
+.wmrow{display:flex;align-items:center;justify-content:center;gap:clamp(.8rem,3vw,2.6rem)}
+.wmrow .wm{font-size:clamp(3.1rem,13.5vw,8.5rem)}
+.spk{width:clamp(18px,3vw,36px);height:auto;flex:none;filter:drop-shadow(0 0 10px rgba(234,168,115,.55));animation:tw 3.2s ease-in-out infinite}
+.spk+.wm+.spk{animation-delay:1.6s}
+@keyframes tw{50%{transform:scale(.78);opacity:.65}}
+.tag{display:flex;align-items:center;justify-content:center;gap:1.2rem;width:min(100%,780px);font:600 clamp(.58rem,2.3vw,.95rem) var(--b);letter-spacing:.3em;text-transform:uppercase;color:var(--am)}
+.tag i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--cu))}
+.tag i:last-child{background:linear-gradient(90deg,var(--cu),transparent)}
+.hero h1{font-size:clamp(2.2rem,6.4vw,4.8rem);max-width:28ch;margin:clamp(2rem,5vw,3.5rem) 0 1.2rem}
+.hero h1 em{font-style:normal;color:var(--cu)}
+.sub{font-size:1.1rem;color:#B8B2AB}
+.cta{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:1.8rem}
+.badge{margin-top:2.2rem;display:inline-flex;gap:.7rem;align-items:center;padding:.6rem 1.1rem;border-radius:999px;background:rgba(16,16,23,.65);backdrop-filter:blur(12px);border:1px solid var(--ln);font:400 .74rem var(--m);letter-spacing:.06em;text-transform:uppercase}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--am);animation:pu 2s ease-in-out infinite;flex:none}
+@keyframes pu{50%{opacity:.35;transform:scale(.7)}}
+.tele{border-block:1px solid var(--ln);background:var(--sf)}
+.tele .wrap{padding-block:clamp(2.5rem,6vw,4rem);display:grid;gap:2.5rem;text-align:center}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;justify-content:center}
+.stat{display:flex;flex-direction:column;align-items:center;text-align:center}
+.stat b{display:block;font:400 clamp(2.6rem,6vw,4.6rem)/1 var(--d);letter-spacing:.02em;color:var(--ink)}
+.stat>span{display:block;font:400 .75rem var(--m);color:var(--soft);text-transform:uppercase;letter-spacing:.06em;margin-top:.4rem}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;padding:0;margin:0 auto}
+.chips li{list-style:none;padding:.45rem .9rem;border:1px solid var(--ln);border-radius:6px;font:400 .82rem var(--m);color:var(--ink);background:rgba(255,255,255,.015);transition:border-color .2s,color .2s}
+.chips li:hover{border-color:var(--cu);color:var(--am)}
+h2{font-size:clamp(2.4rem,6vw,4.4rem);margin:.7rem 0 1rem;max-width:20ch}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;margin-top:2.5rem}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:18px;padding:clamp(1.25rem,3vw,2rem);box-shadow:0 18px 36px -18px rgba(0,0,0,.7)}
+.card h3{font-size:clamp(1.7rem,3vw,2.4rem);margin:.5rem 0 .8rem}
+.c1{grid-column:span 7;grid-row:span 2}.c2,.c3{grid-column:span 5}
+.wa{margin-top:1.5rem;background:var(--bg);border:1px solid var(--ln);border-radius:14px;padding:1rem;min-height:340px;display:flex;flex-direction:column;gap:.5rem}
+.wa header{display:flex;justify-content:space-between;font:400 .72rem var(--m);color:var(--soft);text-transform:uppercase}
+.msg{max-width:84%;padding:.5rem .8rem;border-radius:12px;font-size:.93rem;line-height:1.4;opacity:0;transform:translateY(6px);transition:opacity .25s,transform .25s}
+.msg.on{opacity:1;transform:none}
+.msg small{display:block;font:400 .66rem var(--m);color:var(--soft);margin-top:.15rem}
+.mi{background:#1A1A23;align-self:flex-start}.mo{background:rgba(200,125,59,.22);align-self:flex-end}
+.replay{align-self:flex-start;margin-top:auto;background:none;border:0;color:var(--am);font:400 .78rem var(--m);cursor:pointer;min-height:44px;text-transform:uppercase}
+.flow{display:flex;align-items:center;gap:.6rem;margin-top:1.2rem;font:400 .78rem var(--m);text-transform:uppercase;flex-wrap:wrap}
+.flow i{flex:1;min-width:20px;height:1px;background:linear-gradient(90deg,var(--cu),var(--am))}
+.est{background:var(--sf);border-block:1px solid var(--ln)}
+.est-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,4rem);margin-top:2.5rem;align-items:start}
+.ctl{display:grid;gap:1.3rem}
+.cur-box{display:grid;gap:.5rem}
+.cur-box>span{font:400 .8rem var(--m);text-transform:uppercase;letter-spacing:.05em;color:var(--soft)}
+.cur-seg{display:flex;gap:.5rem}
+.cur-btn{flex:1;min-height:42px;border-radius:10px;border:1px solid var(--ln);background:rgba(16,16,23,.6);color:var(--soft);font:600 .82rem var(--m);cursor:pointer;transition:all .2s ease;display:flex;align-items:center;justify-content:center;gap:.35rem;letter-spacing:.03em;text-transform:uppercase}
+.cur-btn:hover{border-color:var(--cu);color:var(--ink)}
+.cur-btn[aria-pressed=true]{background:var(--cu);color:var(--bg);border-color:var(--cu);font-weight:700;box-shadow:0 0 16px rgba(200,125,59,.35)}
+.ctl>label,.ctl legend{display:flex;justify-content:space-between;gap:1rem;font:400 .8rem var(--m);text-transform:uppercase;letter-spacing:.05em;color:var(--soft)}
+.ctl output{color:var(--ink)}
+input[type=range]{width:100%;accent-color:var(--cu);height:32px}
+fieldset{border:0;padding:0;min-width:0}
+.rt{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.6rem}
+.rt label{position:relative;cursor:pointer;display:block;padding:.65rem .8rem;border:1px solid var(--ln);border-radius:10px;font:400 .9rem var(--b);color:var(--ink);transition:background .2s,border-color .2s}
+.rt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.rt label:has(input:checked){background:rgba(200,125,59,.18);border-color:var(--cu)}
+.rt label:has(input:focus-visible){outline:3px solid var(--am);outline-offset:2px}
+.rt small{display:block;color:var(--soft);font:400 .7rem var(--m)}
+.out-p{background:var(--bg);border:1px solid var(--ln);border-radius:18px;padding:clamp(1.25rem,3vw,2rem);display:flex;flex-direction:column;gap:1.1rem}
+.big{font:400 clamp(3rem,7vw,5rem)/1 var(--d);letter-spacing:.02em;color:var(--cu);overflow-wrap:anywhere}
+.big.g{color:var(--am)}.big.s{font-size:clamp(2rem,4.5vw,3rem)}
+.out-p .row{border-top:1px solid var(--ln);padding-top:.9rem}
+.note{font:400 .7rem/1.55 var(--m);color:var(--soft);max-width:none}
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:2rem 0 1rem}
+.tabs button{min-height:48px;padding:.5rem 1.1rem;border-radius:10px;border:1px solid var(--ln);background:none;color:var(--soft);font:500 .95rem var(--b);cursor:pointer;transition:background .2s,color .2s}
+.tabs button[aria-selected=true]{background:var(--cu);color:var(--bg);border-color:var(--cu)}
+.panel{background:var(--sf);border:1px solid var(--ln);border-radius:18px;padding:clamp(1.25rem,3vw,2.2rem);display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.panel[hidden]{display:none}
+.panel h3{font-size:clamp(1.9rem,3.6vw,2.8rem);margin:.5rem 0 .8rem}
+.panel ul{list-style:none;padding:0;display:grid;gap:.2rem;align-content:start}
+.panel li{padding:.75rem 0;border-top:1px solid var(--ln);color:var(--ink)}
+.close .wrap{display:grid;justify-items:center;text-align:center;gap:1.4rem}
+.close h2{max-width:16ch;font-size:clamp(2.6rem,7vw,5.2rem)}
+.slots{display:flex;gap:.5rem}.slots i{width:34px;height:6px;border-radius:3px;background:var(--cu)}
+dialog{background:var(--sf);color:var(--ink);border:1px solid var(--ln);border-radius:20px;padding:clamp(1.25rem,4vw,2.25rem);width:min(520px,92vw);max-height:92svh;overflow:auto;margin:auto}
+dialog::backdrop{background:rgba(9,9,13,.82);backdrop-filter:blur(6px)}
+dialog h3{font-size:2.2rem;margin-bottom:1rem}
+dialog form{display:grid;gap:.9rem}
+dialog label{display:grid;gap:.3rem;font:400 .74rem var(--m);text-transform:uppercase;letter-spacing:.06em;color:var(--soft)}
+dialog input,.fire input[type=tel]{min-height:48px;background:var(--bg);color:var(--ink);border:1px solid var(--ln);border-radius:10px;padding:.5rem .8rem;font:400 1rem var(--b);width:100%}
+#st{min-height:1.4rem;font-size:.9rem;color:var(--am)}
+footer.ft{border-top:1px solid var(--ln);background:var(--sf);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
+.ft-wrap{padding-top:0;padding-bottom:0}
+.ft-grid{display:grid;grid-template-columns:1.45fr 1fr 1.2fr 1.25fr;gap:clamp(1.8rem,3.8vw,4rem);align-items:start;width:100%}
+.ft-col{display:grid;gap:1.1rem}
+.ft-brand{gap:1.1rem}
+.ft-logo{text-decoration:none;display:inline-block}
+.ft-logo .wm{font-size:2.2rem;letter-spacing:.24em;filter:none}
+.ft-tag{font:500 .76rem var(--b);letter-spacing:.22em;text-transform:uppercase;color:var(--am);margin-top:-.35rem}
+.ft-desc{font-size:.88rem;line-height:1.65;color:#ABA49C;max-width:38ch;text-wrap:pretty}
+.ft-head{font:600 .75rem var(--m);text-transform:uppercase;letter-spacing:.12em;color:var(--am);height:26px;display:flex;align-items:center}
+.ft-links{list-style:none;padding:0;display:grid;gap:.65rem}
+.ft-links li{font-size:.88rem;color:var(--soft)}
+.ft-links a{color:var(--soft);text-decoration:none;transition:color .2s,transform .2s;display:inline-flex;align-items:center;gap:.5rem;white-space:nowrap}
+.ft-links a:hover{color:var(--ink);transform:translateX(2px)}
+.ft-social a svg{flex:none;color:var(--am);transition:color .2s}
+.ft-social a:hover svg{color:var(--cu)}
+.ft-trust li{font:400 .8rem var(--m);color:var(--soft);position:relative;padding-left:1.1rem}
+.ft-trust li::before{content:'';position:absolute;left:0;top:.55em;width:5px;height:1px;background:var(--cu)}
+.ft-bottom{margin-top:clamp(2.5rem,5vw,4rem);padding-top:1.8rem;border-top:1px solid var(--ln);display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;font:400 .78rem var(--m);color:var(--soft)}
+.ft-copy{color:var(--soft)}
+.ft-legal{display:flex;gap:1.5rem;align-items:center}
+.ft-leg-btn{background:none;border:0;padding:0;color:var(--soft);font:400 .78rem var(--m);text-decoration:none;transition:color .2s;cursor:pointer}
+.ft-leg-btn:hover{color:var(--am);text-decoration:underline}
+@media(max-width:980px){.ft-grid{grid-template-columns:1fr 1fr;gap:2.5rem}.ft-links a{white-space:normal}}
+@media(max-width:640px){.ft-grid{grid-template-columns:1fr;gap:2.2rem}.ft-bottom{flex-direction:column;align-items:flex-start;gap:.8rem}}
+dialog.dlg-lg{width:min(720px,94vw);max-height:88svh;padding:clamp(1.5rem,4vw,2.5rem);background:#101017;border:1px solid var(--ln);border-radius:20px;box-shadow:0 24px 60px rgba(0,0,0,.85)}
+.dlg-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1.2rem}
+.dlg-head h3{font-size:clamp(1.8rem,4vw,2.4rem);margin-top:.2rem}
+.dlg-close{background:none;border:1px solid var(--ln);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:var(--soft);font-size:1.3rem;cursor:pointer;line-height:1;transition:all .2s ease;flex:none}
+.dlg-close:hover{border-color:var(--cu);color:var(--ink);background:rgba(200,125,59,.15)}
+.legal-body{display:grid;gap:1rem;margin:1.2rem 0;max-height:48svh;overflow-y:auto;padding-right:.8rem;scrollbar-width:thin;scrollbar-color:var(--cu) transparent}
+.legal-body h4{font:600 .85rem var(--m);color:var(--am);letter-spacing:.04em;text-transform:uppercase;margin-top:.4rem}
+.legal-body p{font-size:.9rem;line-height:1.65;color:#ABA49C;max-width:none}
+.dlg-foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1.2rem;padding-top:1.1rem;border-top:1px solid var(--ln);flex-wrap:wrap}
+#cf{position:fixed;inset:0;pointer-events:none;z-index:50;width:100%;height:100%}
+[hidden]{display:none!important}
+.st-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,4rem);align-items:center}
+.fire{background:var(--sf);border:1px solid var(--ln);border-radius:18px;padding:clamp(1.25rem,3vw,2rem);display:grid;gap:.9rem}
+.fire label{font:400 .74rem var(--m);text-transform:uppercase;letter-spacing:.06em;color:var(--soft)}
+.fr{display:flex;gap:.6rem}.fr input{flex:1;min-width:0}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.timer{font:400 clamp(4rem,11vw,7rem)/1 var(--d);letter-spacing:.02em;color:var(--cu);min-height:1em}
+.timer.ok{color:var(--am)}
+#fst{min-height:1.6rem;color:var(--ink);font-size:.95rem}
+.btns{display:flex;flex-wrap:wrap;gap:.6rem}.btns .btn{flex:1 1 200px}
+.seg{display:flex;gap:.4rem;margin-bottom:1.1rem}
+.seg button{flex:1;min-height:44px;border-radius:10px;border:1px solid var(--ln);background:none;color:var(--soft);font:500 .9rem var(--b);cursor:pointer;transition:background .2s,color .2s}
+.seg button[aria-pressed=true]{background:var(--cu);color:var(--bg);border-color:var(--cu)}
+#bk{display:grid;gap:1rem;justify-items:start}
+#ts{background:transparent;border:0;padding:0;width:min(720px,94vw);max-height:94svh;overflow:auto;margin:auto;color:#14110C}
+#ts::backdrop{background:rgba(9,9,13,.85);backdrop-filter:blur(6px)}
+.sheet{background:#F5EFEB;border-radius:14px;padding:clamp(1.25rem,4vw,2.5rem);display:grid;gap:1.3rem;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;border-bottom:2px solid #C87D3B;padding-bottom:1rem}
+.shw{display:flex;align-items:center;gap:.7rem;font:400 clamp(1.7rem,5vw,2.4rem)/1 var(--d);letter-spacing:.22em}
+.shw svg{width:15px;flex:none}
+.shm{text-align:right;font:400 .7rem var(--m);text-transform:uppercase;letter-spacing:.06em;color:#4A443A}
+.shm b{display:block;font:400 1.4rem/1 var(--d);letter-spacing:.06em;color:#14110C;margin-bottom:.25rem}
+.shk{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.shk>div{background:#14110C;border-radius:10px;padding:1rem 1.2rem}
+.shk small{display:block;font:400 .66rem var(--m);text-transform:uppercase;letter-spacing:.06em;color:#EAA873;margin-bottom:.3rem}
+.shk b{display:block;font:400 clamp(2.3rem,7vw,3.5rem)/1 var(--d);color:#F5EFEB;font-weight:400}
+.sht{width:100%;border-collapse:collapse;font-size:.95rem}
+.sht th{text-align:left;font-weight:400;color:#4A443A;padding:.55rem 0;border-bottom:1px solid #D9CFC6}
+.sht td{text-align:right;font-weight:500;padding:.55rem 0;border-bottom:1px solid #D9CFC6;color:#14110C}
+.shn{font:400 .68rem/1.55 var(--m);color:#4A443A;max-width:none}
+.shf{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font:400 .68rem var(--m);text-transform:uppercase;letter-spacing:.1em;color:#7A4318}
+.ts-a{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem;align-items:center}
+#pst{color:var(--am);font-size:.85rem;max-width:none}
+@media print{@page{margin:14mm}
+body>*:not(#ts){display:none!important}
+body{background:#fff}
+#ts{position:static;display:block;width:auto;max-width:none;max-height:none;overflow:visible;border:0;padding:0;margin:0;background:#fff}
+#ts::backdrop{display:none}.ts-a{display:none!important}.sheet{border-radius:0}}
+@media(max-width:860px){
+.hero-in{padding-top:6rem;padding-bottom:2.5rem}
+.tag i{display:none}.tag{letter-spacing:.24em}
+.stats{grid-template-columns:1fr;gap:1.25rem}.stat{display:flex;flex-direction:column;align-items:center;text-align:center;border-top:1px solid var(--ln);padding-top:.9rem;gap:.3rem}
+.stat:first-child{border-top:none;padding-top:0}
+.stat b{order:1}
+.stat>span{order:2}
+.c1,.c2,.c3{grid-column:1/-1;grid-row:auto}
+.est-g,.panel,.st-g,.shk{grid-template-columns:1fr}.fr{flex-direction:column}.shm{text-align:left}.sh{flex-direction:column;align-items:flex-start}}
+@media(prefers-reduced-motion:no-preference){
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .3s,transform .3s}
+.js .rv.in{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav id="nav" aria-label="Primary">
+<a href="#top" aria-label="VEQTRO home" style="text-decoration:none"><span class="wm">VEQTRO</span></a>
+<a class="btn b2" href="#audit-cta" data-open>Request audit</a>
+</nav>
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+<div class="grid" aria-hidden="true"></div>
+<canvas id="orb" aria-hidden="true"></canvas>
+<div class="hero-in" id="hin">
+<div class="logo" id="logo" role="img" aria-label="VEQTRO. Intelligence meets infrastructure.">
+<div class="wmrow" id="wmrow" aria-hidden="true">
+<svg class="spk" viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0Z" fill="#EAA873"/></svg>
+<span class="wm">VEQTRO</span>
+<svg class="spk" viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0Z" fill="#EAA873"/></svg>
+</div>
+<div class="tag" aria-hidden="true"><i></i><span>Intelligence meets infrastructure</span><i></i></div>
+</div>
+<h1 id="h1">Stop Leaking Leads. We Build The Engine <em>That Closes Them.</em></h1>
+<p class="sub">Bespoke revenue infrastructure for high-ticket businesses. We engineer, deploy, and monitor the entire pipeline between your ad spend and signed contracts — answering in under 10 seconds, qualifying leads on WhatsApp, booking sales calls, and syncing two-way with your CRM.</p>
+<div class="cta"><a class="btn b1" href="#estimator">Launch Revenue Leak Estimator</a><a class="btn b2" href="#audit-cta" data-open>Request Forensic Audit</a></div>
+<div class="badge"><span class="dot"></span>Bespoke Infrastructure · &lt;10s Intake Online · 0 Dropped Leads</div>
+</div>
+</section>
+
+<section class="tele" aria-label="Telemetry">
+<div class="wrap">
+<div class="stats">
+<div class="stat rv"><b><span data-n="8.4" data-p="&lt; " data-s="s" data-f="1">&lt; 8.4s</span></b><span>Average intake latency</span></div>
+<div class="stat rv"><b><span data-n="100" data-s="%" data-f="0">100%</span></b><span>CRM drop rate: zero</span></div>
+<div class="stat rv"><b><span data-n="48.6" data-p="+" data-s="%" data-f="1">+48.6%</span></b><span>Conversion lift</span></div>
+</div>
+<ul class="chips" aria-label="Native integrations"><li>LeadSquared Enterprise</li><li>Salesforce CRM</li><li>HubSpot Enterprise</li><li>Zoho One</li><li>Meta Lead Ads</li><li>Google Ads (Offline API)</li><li>WhatsApp Cloud API</li><li>Razorpay &amp; Stripe</li><li>Cal.com &amp; Calendly</li></ul>
+</div>
+</section>
+
+<section class="wrap" aria-labelledby="h-p">
+<p class="mono">Three revenue pillars</p>
+<h2 id="h-p">One lead path from ad click to signed quote.</h2>
+<div class="bento">
+<article class="card c1 rv">
+<p class="mono">Pillar 01</p>
+<h3>&lt;10s Speed-to-Lead WhatsApp Engine</h3>
+<p>The first reply fires before a human could unlock a phone. Qualifies budget, delivers portfolio proof, integrates Cal.com round-robin booking, and collects deposit links via Stripe or Razorpay.</p>
+<div class="wa" id="wa" role="img" aria-label="Simulated WhatsApp conversation: a lead asks about a project, the engine qualifies budget, sends portfolio examples and books a slot in 7 seconds"><header><span>Simulated flow</span><span id="clk">0.0s</span></header></div>
+</article>
+<article class="card c2 rv">
+<p class="mono">Pillar 02</p>
+<h3>Two-Way CRM Infrastructure</h3>
+<p>Bi-directional sync with HubSpot, LeadSquared, and Salesforce. Stage changes trigger WhatsApp follow-ups, and won deals fire Google &amp; Meta Offline Conversion APIs to retrain ad algorithms on real revenue.</p>
+<div class="flow"><span>Intake</span><i></i><span>Webhook</span><i></i><span>CRM</span><i></i><span>Ad Feedback</span></div>
+</article>
+<article class="card c3 rv">
+<p class="mono">Pillar 03</p>
+<h3>Web Flagships &amp; Offline Field Sales PWAs</h3>
+<p>High-conversion intake web flagships and offline field apps. Sales reps quote, sign agreements, and collect deposits on iPads even with zero connectivity, auto-syncing when back online.</p>
+</article>
+</div>
+</section>
+
+<section class="wrap" id="speedtest" aria-labelledby="h-s">
+<div class="st-g">
+<div><p class="mono">Live speed test</p><h2 id="h-s">Fire a test. Watch the clock.</h2><p>Enter your own WhatsApp number and press the button. The timer starts on click and stops when our intake webhook accepts the request.</p></div>
+<form class="fire rv" id="fire" novalidate>
+<label for="ph">Your WhatsApp number, with country code</label>
+<div class="fr"><input id="ph" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91 98765 43210"><button class="btn b1" id="fb" type="submit">Fire Test</button></div>
+<input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="timer" id="tm" role="timer" aria-live="off">0.0s</div>
+<p id="fst" role="status">Ready.</p>
+<p class="note">Sends one test message to the number you enter. Use only a number you own or have permission to message.</p>
+</form></div></section>
+
+<section class="est" id="estimator" aria-labelledby="h-e">
+<div class="wrap">
+<p class="mono">60-second revenue leak estimator</p>
+<h2 id="h-e">What slow follow-up costs you each year.</h2>
+<div class="est-g">
+<div class="ctl">
+<div class="cur-box">
+<span>Base currency</span>
+<div class="cur-seg" role="group" aria-label="Select currency">
+<button type="button" class="cur-btn" data-cur="USD" aria-pressed="true">$ USD</button>
+<button type="button" class="cur-btn" data-cur="INR" aria-pressed="false">₹ INR</button>
+<button type="button" class="cur-btn" data-cur="GBP" aria-pressed="false">£ GBP</button>
+</div>
+</div>
+<label for="sp">Monthly ad spend <output id="spo"></output></label><input id="sp" type="range" min="1000" max="50000" step="500" value="12000">
+<label for="ld">Monthly inbound leads <output id="ldo"></output></label><input id="ld" type="range" min="20" max="1000" step="10" value="200">
+<label for="dv">Average deal value <output id="dvo"></output></label><input id="dv" type="range" min="1000" max="50000" step="500" value="8000">
+<label for="cr">Close rate on contacted leads <output id="cro"></output></label><input id="cr" type="range" min="5" max="40" step="1" value="20">
+<fieldset><legend>Current response time</legend>
+<div class="rt">
+<label><input type="radio" name="rt" value="12">&lt; 5 min<small>12% decay</small></label>
+<label><input type="radio" name="rt" value="38" checked>30–60 min<small>38% decay</small></label>
+<label><input type="radio" name="rt" value="65">2–4 hr<small>65% decay</small></label>
+<label><input type="radio" name="rt" value="84">Next day<small>84% decay</small></label>
+</div></fieldset>
+</div>
+<div class="out-p" aria-live="polite">
+<div><p class="mono">Revenue leaked per year</p><div class="big" id="lk">$0</div></div>
+<div class="row"><p class="mono">VEQTRO recapture potential (+76%)</p><div class="big g" id="rc">$0</div></div>
+<div class="row"><p class="mono">Ad spend wasted per year</p><div class="big g s" id="aw">$0</div></div>
+<div class="btns"><button class="btn b1" id="boom" type="button">Recapture it</button><button class="btn b2" id="dl" type="button">Download Board Tear-Sheet</button></div>
+<p class="note">Model: leads × 12 × decay × close rate × deal value. Decay rates by response time are VEQTRO’s working figures; close rate is your input. An estimate, not a guarantee.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="wrap" aria-labelledby="h-a">
+<p class="mono">Confidential 3-page forensic audit</p>
+<h2 id="h-a">Three pages. Every leak located, scored and scheduled.</h2>
+<div class="tabs" role="tablist" aria-label="Audit pages">
+<button role="tab" id="t1" aria-controls="p1" aria-selected="true">1 · Velocity &amp; Intake</button>
+<button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">2 · CRM SLA</button>
+<button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1">3 · 30-Day Roadmap</button>
+</div>
+<div class="panel" id="p1" role="tabpanel" aria-labelledby="t1"><div><p class="mono">Page 1</p><h3>Velocity &amp; Intake Leak Detection</h3><p>A secret-shopper audit: we enquire through every path your ads point to and time what happens next.</p></div><ul><li>First-response time per channel: form, WhatsApp, call</li><li>Where the enquiry stalled or went unanswered</li><li>Out-of-hours behaviour</li></ul></div>
+<div class="panel" id="p2" role="tabpanel" aria-labelledby="t2" hidden><div><p class="mono">Page 2</p><h3>CRM Zero-Drop SLA Scorecard</h3><p>We trace every test lead from capture to CRM record and mark each handoff that fails or lags.</p></div><ul><li>Lead-to-record match and duplicate check</li><li>Stage-update latency, both directions</li><li>Owner assignment and follow-up SLA</li></ul></div>
+<div class="panel" id="p3" role="tabpanel" aria-labelledby="t3" hidden><div><p class="mono">Page 3</p><h3>Custom 30-Day Recapture Roadmap</h3><p>The fixes, ordered by recovered revenue per week of effort, with owners and dates.</p></div><ul><li>Week 1: intake speed and WhatsApp qualification</li><li>Week 2: CRM sync and SLA alerts</li><li>Weeks 3–4: estimator, field app, reporting</li></ul></div>
+</section>
+
+<section class="close" id="audit-cta"><div class="wrap">
+<p class="mono">Deployment Capacity</p>
+<h2>Stop losing high-ticket clients to slow follow-up.</h2>
+<div class="slots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<p>Bespoke engineering &amp; white-glove managed infrastructure. Strictly 4 client deployments per month to guarantee dedicated senior engineers for every rollout.</p>
+<button class="btn b1" type="button" data-open>Request Forensic Audit</button>
+</div></section>
+</main>
+<footer class="ft" aria-label="Site footer">
+<div class="wrap ft-wrap">
+<div class="ft-grid">
+<div class="ft-col ft-brand">
+<a href="#top" aria-label="VEQTRO home" class="ft-logo"><span class="wm">VEQTRO</span></a>
+<p class="ft-tag">Intelligence meets infrastructure</p>
+<p class="ft-desc">Bespoke speed-to-lead architecture and revenue operations engineered for high-ticket service firms, private healthcare, and enterprise teams globally.</p>
+</div>
+
+<div class="ft-col">
+<p class="ft-head">Architecture</p>
+<ul class="ft-links">
+<li><a href="#h-p">&lt;10s WhatsApp Intake</a></li>
+<li><a href="#h-p">Two-Way CRM Webhooks</a></li>
+<li><a href="#h-p">Offline Field Sales PWA</a></li>
+<li><a href="#estimator">Revenue Leak Estimator</a></li>
+<li><a href="#speedtest">Live Intake Speed Test</a></li>
+<li><a href="#audit-cta" data-open>3-Page Forensic Audit</a></li>
+</ul>
+</div>
+
+<div class="ft-col">
+<p class="ft-head">Trust &amp; Governance</p>
+<ul class="ft-links ft-trust">
+<li><span>End-to-End Encrypted Webhooks</span></li>
+<li><span>Meta Cloud API Verified Tier</span></li>
+<li><span>SOC-2 Type II Architecture</span></li>
+<li><span>Strict Zero-Lead-Retention Protocol</span></li>
+<li><span>DPDP &amp; GDPR Data Compliant</span></li>
+<li><span>Senior Infrastructure SLA</span></li>
+</ul>
+</div>
+
+<div class="ft-col">
+<p class="ft-head">Direct Channels</p>
+<ul class="ft-links ft-social">
+<li>
+<a href="https://www.instagram.com/veqtro.ai/" target="_blank" rel="noopener noreferrer">
+<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+<span>Instagram</span>
+</a>
+</li>
+<li>
+<a href="https://www.facebook.com/profile.php?id=61590175846298" target="_blank" rel="noopener noreferrer">
+<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+<span>Facebook</span>
+</a>
+</li>
+<li>
+<a href="https://wa.me/919876543210?text=Hi%20VEQTRO,%20interested%20in%20revenue%20infrastructure" target="_blank" rel="noopener noreferrer">
+<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+<span>WhatsApp Priority Line</span>
+</a>
+</li>
+<li>
+<a href="mailto:growth.veqtro@gmail.com">
+<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l9.518 7.712 9.518-7.712v11.817h-19.036z"/></svg>
+<span>growth.veqtro@gmail.com</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="ft-bottom">
+<span>&copy; 2026 VEQTRO AI Inc. All rights reserved.</span>
+<div class="ft-legal">
+<button type="button" class="ft-leg-btn" data-legal="terms">Terms and Condition</button>
+<button type="button" class="ft-leg-btn" data-legal="priv">Privacy Policy</button>
+</div>
+</div>
+</div>
+</footer>
+
+<dialog id="legal" class="dlg-lg" aria-labelledby="leg-t">
+<div class="dlg-head">
+<div><p class="mono">Governance &amp; Data Security</p><h3 id="leg-t">Enterprise Legal Architecture</h3></div>
+<button class="dlg-close" type="button" id="leg-close" aria-label="Close legal modal">&times;</button>
+</div>
+<div class="seg" role="group" aria-label="Legal document selection">
+<button type="button" id="lt-priv" aria-pressed="true">Privacy &amp; Data Policy</button>
+<button type="button" id="lt-terms" aria-pressed="false">Terms of Service SLA</button>
+</div>
+<div id="lp-priv" class="legal-body">
+<h4>1. Zero-Retention &amp; Data Sovereignty</h4>
+<p>VEQTRO operates as an infrastructure transit layer. Prospect information captured through Meta Lead Ads, WhatsApp Cloud API, and web flagships is securely dispatched via end-to-end encrypted webhooks directly into your proprietary CRM (LeadSquared, Salesforce, HubSpot, or Zoho). VEQTRO does not sell, broker, monetize, or retain client lead records on persistent storage.</p>
+<h4>2. WhatsApp Business &amp; Meta Tech Tier Compliance</h4>
+<p>All automated Speed-to-Lead intake workflows adhere strictly to the Meta WhatsApp Business Messaging Policy. Automated replies, qualification flows, and appointment reminders are initiated only upon explicit user opt-in through lead form submission or direct message initiation. Opt-out mechanisms (e.g., replying 'STOP') are processed with instant cessation SLAs.</p>
+<h4>3. Indian DPDP Act (2023) &amp; Global GDPR Protocols</h4>
+<p>For Indian enterprise deployments, all webhook data handling complies with the Digital Personal Data Protection Act (DPDP) 2023. European and UK enterprise deployments operate under strict GDPR Data Processing Addendums (DPA) with regional data residency guarantees.</p>
+<h4>4. Encryption Standards</h4>
+<p>All payload transmissions utilize TLS 1.3 cryptographic protocols. Bi-directional CRM webhook secret signatures and authentication tokens are encrypted at rest using AES-256 key management.</p>
+</div>
+<div id="lp-terms" class="legal-body" hidden>
+<h4>1. Scope of Managed Infrastructure</h4>
+<p>VEQTRO engineers, deploys, and monitors bespoke growth infrastructure for high-ticket clients. Deliverables include sub-10 second speed-to-lead qualification engines, bi-directional CRM webhook synchronization, offline field sales PWAs, and custom revenue estimators.</p>
+<h4>2. 99.98% Intake Engine SLA</h4>
+<p>VEQTRO guarantees a 99.98% uptime SLA on automated webhook intake relays. Dedicated senior infrastructure engineers monitor latency round-the-clock with automated fallback failover pipelines.</p>
+<h4>3. 100% Client Intellectual Property &amp; Data Ownership</h4>
+<p>The client retains exclusive and perpetual ownership of all CRM records, customer conversation histories, brand assets, and custom qualification state machines deployed into their infrastructure.</p>
+<h4>4. Deployment Cap &amp; White-Glove Support</h4>
+<p>Deployments are strictly capped at 4 enterprise rollouts per month to ensure dedicated infrastructure engineering capacity and white-glove onboarding for every client.</p>
+</div>
+<div class="dlg-foot">
+<span class="mono">VEQTRO AI Inc. · Legal &amp; Security Compliance</span>
+<button class="btn b2" type="button" id="leg-ok">Acknowledge &amp; Close</button>
+</div>
+</dialog>
+
+<dialog id="m" aria-labelledby="mt">
+<h3 id="mt">Request your forensic audit</h3>
+<div class="seg" role="group" aria-label="How to proceed"><button type="button" id="sg1" aria-pressed="true">Request audit</button><button type="button" id="sg2" aria-pressed="false">Book a call now</button></div>
+<div id="bk" hidden><p>Pick a time for a consultation call. Your email and company details, if filled in, are passed to the scheduler.</p><a class="btn b1" id="bka" target="_blank" rel="noopener noreferrer">Open scheduler</a><p class="note" id="bkn"></p></div>
+<form id="f">
+<label>Company<input name="company" required autocomplete="organization"></label>
+<label>Website URL<input name="url" type="url" required placeholder="https://" autocomplete="url"></label>
+<label>Monthly ad budget<input name="budget" required inputmode="numeric" placeholder="e.g. 12000"></label>
+<label>Email<input name="email" type="email" required autocomplete="email"></label>
+<label>WhatsApp number<input name="phone" type="tel" required autocomplete="tel" placeholder="+91…"></label>
+<p id="st" role="status"></p>
+<div class="cta" style="margin:0;justify-content:flex-start"><button class="btn b1" type="submit">Send request</button><button class="btn b2" type="button" id="x">Close</button></div>
+</form>
+</dialog>
+<dialog id="ts" aria-labelledby="tst" autofocus>
+<div class="sheet" id="sheet">
+<div class="sh"><div class="shw"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0Z" fill="#C87D3B"/></svg><span>VEQTRO</span></div><div class="shm"><b id="tst">Revenue Leak Tear-Sheet</b><span id="shd"></span></div></div>
+<div class="shk"><div><small>Revenue leaked per year</small><b id="s1"></b></div><div><small>Recapture potential (+76%)</small><b id="s2"></b></div></div>
+<table class="sht"><tbody id="sin"></tbody></table>
+<p class="shn">Model: leads × 12 × decay × close rate × deal value. Decay by response time is VEQTRO’s working figure; the other inputs are the reader’s own. A forecast for discussion, not a guarantee.</p>
+<div class="shf"><span>Intelligence meets infrastructure</span><span>VEQTRO AI · Growth Infrastructure</span></div>
+</div>
+<div class="ts-a"><button class="btn b1" type="button" id="pr">Print / Save as PDF</button><button class="btn b2" type="button" id="tc">Close</button><p id="pst" role="status"></p></div>
+</dialog>
+<canvas id="cf" aria-hidden="true"></canvas>
+
+<script>
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const BOOKING_URL=''; // your Cal.com or Calendly link, e.g. https://cal.com/yourname/audit
+const ENDPOINT=''; // set to your intake URL to receive form posts
+let px=0,py=0,tk=0;
+
+/* nav state + hero depth (logo and canvas move at different rates) */
+const nav=$('#nav'),logo=$('#logo'),orb=$('#orb');
+function lay(){tk=0;const y=Math.min(scrollY,innerHeight*1.2);nav.classList.toggle('on',scrollY>24);
+logo.style.transform=`translate3d(${px*-8}px,${-y*.1+py*-8}px,0)`;orb.style.transform=`translate3d(0,${-y*.04}px,0)`}
+const req=()=>{if(!tk)tk=requestAnimationFrame(lay)};
+addEventListener('scroll',req,{passive:true});lay();
+if(!RM)addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;px=e.clientX/innerWidth-.5;py=e.clientY/innerHeight-.5;req()},{passive:true});
+
+/* background: leads spiral in across the logo's rings and get qualified */
+(function(){const x=orb.getContext('2d'),hero=$('.hero');let W,H,dpr,cx,cy,R,t=0,ox=0,oy=0,P=[],U=[],last=0,sp=0,run=false,vis=true;
+function size(){dpr=Math.min(devicePixelRatio||1,innerWidth<860?1.5:2);W=hero.clientWidth;H=hero.clientHeight;orb.width=W*dpr;orb.height=H*dpr;
+const hi=$('#hin'),row=$('#wmrow');cx=W/2;cy=hi.offsetTop+logo.offsetTop+row.offsetTop+row.offsetHeight/2;
+R=W<860?Math.min(W*.6,H*.5):Math.min(W*.4,Math.max(H*.58,300));if(!run)draw(0)}
+const ring=(X,Y,r)=>{x.beginPath();x.arc(X,Y,r,0,6.2832);x.stroke()};
+function draw(dt){x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,W,H);ox+=(px-ox)*.06;oy+=(py-oy)*.06;
+const X=cx+ox*16,Y=cy+oy*16,g=x.createRadialGradient(X,Y,0,X,Y,R*1.1);
+g.addColorStop(0,'rgba(200,125,59,.22)');g.addColorStop(.55,'rgba(200,125,59,.06)');g.addColorStop(1,'rgba(200,125,59,0)');x.fillStyle=g;x.fillRect(0,0,W,H);
+x.lineWidth=1;x.strokeStyle='rgba(200,125,59,.32)';ring(X,Y,R);
+x.setLineDash([2,7]);x.lineDashOffset=-t*5;x.strokeStyle='rgba(234,168,115,.34)';ring(X,Y,R*.89);x.setLineDash([]);
+x.strokeStyle='rgba(200,125,59,.24)';ring(X,Y,R*.73);x.strokeStyle='rgba(200,125,59,.1)';ring(X,Y,R*1.3);
+x.strokeStyle='rgba(234,168,115,.65)';for(let k=0;k<4;k++){const a=k*1.5708,c=Math.cos(a),s=Math.sin(a);x.beginPath();x.moveTo(X+c*(R+8),Y+s*(R+8));x.lineTo(X+c*(R+24),Y+s*(R+24));x.stroke()}
+x.fillStyle='#EAA873';[[R,.1,0],[R*.73,-.16,2],[R*1.3,.06,4]].forEach(([r,v,o])=>{x.beginPath();x.arc(X+Math.cos(t*v+o)*r,Y+Math.sin(t*v+o)*r,2.4,0,6.2832);x.fill()});
+if(RM)return;
+sp-=dt;if(sp<=0&&P.length<(W<860?7:11)){P.push({a:Math.random()*6.2832,p:0,s:.17+Math.random()*.07,h:[]});sp=W<860?1.3:.85}
+P=P.filter(q=>{q.p+=dt*q.s;const r=R*1.3*Math.pow(1-q.p,1.25),a=q.a+q.p*1.7,qx=X+Math.cos(a)*r,qy=Y+Math.sin(a)*r;
+q.h.push([qx,qy]);if(q.h.length>14)q.h.shift();const hot=r<R*.9;
+for(let i=1;i<q.h.length;i++){x.strokeStyle=(hot?'rgba(234,168,115,':'rgba(155,149,143,')+(i/q.h.length*.55)+')';x.beginPath();x.moveTo(q.h[i-1][0],q.h[i-1][1]);x.lineTo(q.h[i][0],q.h[i][1]);x.stroke()}
+x.fillStyle=hot?'#EAA873':'#9B958F';x.beginPath();x.arc(qx,qy,hot?3:2.2,0,6.2832);x.fill();
+if(q.p>=.93){U.push({r:0,X:q.a});return false}return true});
+U=U.filter(u=>{u.r+=dt*R*.5;const al=1-u.r/(R*.26);if(al<=0)return false;x.strokeStyle=`rgba(234,168,115,${al*.5})`;ring(X,Y,R*.1+u.r);return true})}
+function loop(n){if(!run)return;const dt=Math.min((n-last)/1000,.05);last=n;t+=dt;draw(dt);requestAnimationFrame(loop)}
+function go(){const w=vis&&!document.hidden&&!RM;if(w&&!run){run=true;last=performance.now();requestAnimationFrame(loop)}else if(!w)run=false}
+new IntersectionObserver(e=>{vis=e[0].isIntersecting;go()}).observe(hero);document.addEventListener('visibilitychange',go);
+addEventListener('resize',size);document.fonts&&document.fonts.ready.then(size);size();go()})();
+
+/* reveals + count-up */
+const io=new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.08});
+$$('.rv').forEach(e=>io.observe(e));
+const cu=new IntersectionObserver((es,o)=>es.forEach(e=>{if(!e.isIntersecting)return;o.unobserve(e.target);const el=e.target,n=+el.dataset.n,f=+el.dataset.f;if(RM)return;const st=performance.now();
+(function s(now){const k=Math.min((now-st)/1100,1),v=n*(1-Math.pow(1-k,3));el.textContent=(el.dataset.p||'')+v.toFixed(f)+el.dataset.s;if(k<1)requestAnimationFrame(s)})(st)}),{threshold:.6});
+$$('[data-n]').forEach(e=>cu.observe(e));
+
+/* whatsapp simulation, 7s */
+const MS=[[0,'mi','Hi, saw your ad. Do you take full-home projects?'],[.9,'mo','Yes. Which city, and what budget range?'],[2.1,'mi','Chennai, around 25–30L'],[3.3,'mo','Sending three finished projects in that range.'],[4.6,'mo','Free site-visit slots: Thu 11:00, Fri 16:00.'],[5.8,'mi','Thu 11:00'],[7,'mo','Booked. Visit confirmed and synced to your CRM.']];
+const wa=$('#wa'),clk=$('#clk');let timers=[],ticker;
+function playWA(){timers.forEach(clearTimeout);clearInterval(ticker);wa.querySelectorAll('.msg,.replay').forEach(e=>e.remove());
+const els=MS.map(([t,k,s])=>{const d=document.createElement('div');d.className='msg '+k;d.innerHTML=s+'<small>'+t.toFixed(1)+'s</small>';wa.append(d);return d});
+const rb=document.createElement('button');rb.className='replay';rb.type='button';rb.textContent='Replay';rb.onclick=playWA;wa.append(rb);
+if(RM){els.forEach(e=>e.classList.add('on'));clk.textContent='7.0s';return}
+const st=performance.now();ticker=setInterval(()=>{const v=Math.min((performance.now()-st)/1000,7);clk.textContent=v.toFixed(1)+'s';if(v>=7)clearInterval(ticker)},100);
+MS.forEach(([t],i)=>timers.push(setTimeout(()=>els[i].classList.add('on'),t*1000)))}
+new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){playWA();o.disconnect()}},{threshold:.3}).observe(wa);
+
+/* estimator */
+const CURRENCIES={
+USD:{symbol:'$',code:'USD',locale:'en-US',spMin:1000,spMax:50000,spStep:500,spDef:12000,dvMin:1000,dvMax:50000,dvStep:500,dvDef:8000},
+INR:{symbol:'₹',code:'INR',locale:'en-IN',spMin:50000,spMax:2500000,spStep:25000,spDef:500000,dvMin:50000,dvMax:5000000,dvStep:50000,dvDef:800000},
+GBP:{symbol:'£',code:'GBP',locale:'en-GB',spMin:1000,spMax:40000,spStep:500,spDef:10000,dvMin:1000,dvMax:40000,dvStep:500,dvDef:7000}
+};
+let activeCur='USD';
+const curSaved={USD:{sp:12000,dv:8000},INR:{sp:500000,dv:800000},GBP:{sp:10000,dv:7000}};
+const fm=n=>{const c=CURRENCIES[activeCur];return c.symbol+Math.round(n).toLocaleString(c.locale)};
+const RTL={12:'Under 5 min',38:'30–60 min',65:'2–4 hours',84:'Next day'};
+
+function setCurrency(newCur){
+if(!CURRENCIES[newCur]||newCur===activeCur)return;
+curSaved[activeCur]={sp:+$('#sp').value,dv:+$('#dv').value};
+activeCur=newCur;
+const cfg=CURRENCIES[activeCur],spEl=$('#sp'),dvEl=$('#dv');
+spEl.min=cfg.spMin;spEl.max=cfg.spMax;spEl.step=cfg.spStep;
+dvEl.min=cfg.dvMin;dvEl.max=cfg.dvMax;dvEl.step=cfg.dvStep;
+spEl.value=curSaved[activeCur].sp;
+dvEl.value=curSaved[activeCur].dv;
+$$('.cur-btn').forEach(b=>b.setAttribute('aria-pressed',b.dataset.cur===activeCur?'true':'false'));
+const bi=$('input[name=budget]');if(bi)bi.placeholder='e.g. '+curSaved[activeCur].sp;
+calc();
+}
+$$('.cur-btn').forEach(b=>b.addEventListener('click',()=>setCurrency(b.dataset.cur)));
+
+function vals(){
+const sp=+$('#sp').value,ld=+$('#ld').value,dv=+$('#dv').value,cr=+$('#cr').value,d=+$('[name=rt]:checked').value,dc=d/100,leak=ld*12*dc*(cr/100)*dv;
+return{sp,ld,dv,cr,d,leak,rc:leak*.76,aw:sp*12*dc,lost:ld*12*dc};
+}
+function calc(){
+const v=vals(),cfg=CURRENCIES[activeCur];
+curSaved[activeCur]={sp:v.sp,dv:v.dv};
+$('#spo').textContent=fm(v.sp)+(v.sp>=cfg.spMax?'+':'');
+$('#ldo').textContent=v.ld+(v.ld>=1000?'+':'');
+$('#dvo').textContent=fm(v.dv)+(v.dv>=cfg.dvMax?'+':'');
+$('#cro').textContent=v.cr+'%';
+$('#lk').textContent=fm(v.leak);
+$('#rc').textContent=fm(v.rc);
+$('#aw').textContent=fm(v.aw);
+}
+$$('#estimator input').forEach(e=>e.addEventListener('input',calc));calc();
+
+/* board tear-sheet */
+const ts=$('#ts');
+$('#dl').onclick=()=>{
+const v=vals(),cfg=CURRENCIES[activeCur];
+$('#shd').textContent=new Date().toLocaleDateString(cfg.locale,{day:'numeric',month:'long',year:'numeric'});
+$('#s1').textContent=fm(v.leak);
+$('#s2').textContent=fm(v.rc);
+$('#pst').textContent='';
+const R=[
+['Base currency',cfg.code+' ('+cfg.symbol+')'],
+['Monthly ad spend',fm(v.sp)],
+['Monthly inbound leads',v.ld.toLocaleString(cfg.locale)],
+['Average deal value',fm(v.dv)],
+['Close rate on contacted leads',v.cr+'%'],
+['Current response time',RTL[v.d]+' ('+v.d+'% decay)'],
+['Leads lost per year',Math.round(v.lost).toLocaleString(cfg.locale)],
+['Ad spend wasted per year',fm(v.aw)],
+['Leak remaining after recapture',fm(v.leak-v.rc)]
+];
+$('#sin').innerHTML=R.map(r=>'<tr><th scope="row">'+r[0]+'</th><td>'+r[1]+'</td></tr>').join('');
+ts.showModal();
+ts.scrollTop=0;
+};
+$('#tc').onclick=()=>ts.close();
+$('#pr').onclick=()=>{try{window.print()}catch(_){$('#pst').textContent='Printing is blocked here. Open the page directly and press Ctrl/Cmd+P.'}};
+
+/* live speed test */
+const fire=$('#fire');let cool=0;
+fire.addEventListener('submit',async e=>{e.preventDefault();if(fire.elements.website.value)return;
+const raw=$('#ph').value.trim(),dg=raw.replace(/\D/g,''),st=$('#fst'),tm=$('#tm'),fb=$('#fb');
+if(!/^\+?[\d\s().-]+$/.test(raw)||dg.length<8||dg.length>15){st.textContent='Enter a valid number with country code (8 to 15 digits).';$('#ph').focus();return}
+if(Date.now()<cool){st.textContent='Test already fired. Wait a few seconds before the next one.';return}
+tm.className='timer';
+if(!ENDPOINT){tm.textContent='0.0s';st.textContent='Not connected: set ENDPOINT in the page script. Nothing was sent.';return}
+fb.disabled=true;st.textContent='Dispatching…';const t0=performance.now(),tick=setInterval(()=>tm.textContent=((performance.now()-t0)/1000).toFixed(1)+'s',100),ac=new AbortController(),to=setTimeout(()=>ac.abort(),15000);
+try{const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},signal:ac.signal,body:JSON.stringify({type:'speed_test',phone:(raw[0]==='+'?'+':'')+dg,sent_at:new Date().toISOString(),page:location.href})});
+const s=((performance.now()-t0)/1000).toFixed(1);clearInterval(tick);tm.textContent=s+'s';
+if(r.ok){tm.classList.add('ok');st.textContent='Sent! Webhook accepted in '+s+'s.';cool=Date.now()+20000}else st.textContent='Webhook answered '+r.status+'. Delivery not confirmed.'}
+catch(_){clearInterval(tick);tm.textContent=((performance.now()-t0)/1000).toFixed(1)+'s';st.textContent='Could not reach the webhook (network, CORS or timeout).'}
+clearTimeout(to);fb.disabled=false});
+
+/* confetti */
+$('#boom').onclick=()=>{if(RM)return;const c=$('#cf'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;const cols=['#C87D3B','#EAA873','#F5EFEB'],b=$('#boom').getBoundingClientRect();
+const P=Array.from({length:110},()=>({x:b.left+b.width/2,y:b.top,vx:(Math.random()-.5)*14,vy:-Math.random()*13-4,s:4+Math.random()*5,c:cols[Math.random()*3|0],r:Math.random()*6}));let n=0;
+(function f(){x.clearRect(0,0,c.width,c.height);P.forEach(p=>{p.vy+=.4;p.x+=p.vx;p.y+=p.vy;p.r+=.2;x.fillStyle=p.c;x.save();x.translate(p.x,p.y);x.rotate(p.r);x.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);x.restore()});if(++n<100)requestAnimationFrame(f);else x.clearRect(0,0,c.width,c.height)})()};
+
+/* audit tabs */
+const tb=$$('[role=tab]');function sel(i){tb.forEach((t,j)=>{t.setAttribute('aria-selected',i===j);t.tabIndex=i===j?0:-1;$('#'+t.getAttribute('aria-controls')).hidden=i!==j})}
+tb.forEach((t,i)=>{t.onclick=()=>sel(i);t.onkeydown=e=>{const k={ArrowRight:1,ArrowLeft:-1}[e.key];if(k){const j=(i+k+3)%3;sel(j);tb[j].focus()}}});
+
+/* modal: request or book */
+const m=$('#m');
+function bookUrl(){if(!BOOKING_URL)return'';try{const u=new URL(BOOKING_URL),E=$('#f').elements,em=E.email.value.trim(),n='Company: '+E.company.value+' | Site: '+E.url.value+' | Ad budget: '+E.budget.value;
+if(em)u.searchParams.set('email',em);if(/cal\.com$/.test(u.hostname))u.searchParams.set('notes',n);else if(/calendly\.com$/.test(u.hostname))u.searchParams.set('a1',n);return u.href}catch(_){return''}}
+function seg(i){$('#sg1').setAttribute('aria-pressed',i===1);$('#sg2').setAttribute('aria-pressed',i===2);$('#f').hidden=i!==1;$('#bk').hidden=i!==2;
+if(i===2){const u=bookUrl(),a=$('#bka');a.hidden=!u;if(u)a.href=u;$('#bkn').textContent=u?'Opens in a new tab. Choose any open slot.':'Scheduler not connected yet: set BOOKING_URL in the page script to your Cal.com or Calendly link.'}}
+$('#sg1').onclick=()=>seg(1);$('#sg2').onclick=()=>seg(2);
+$$('[data-open]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();$('#st').textContent='';seg(1);m.showModal()}));$('#x').onclick=()=>m.close();
+$('#f').addEventListener('submit',async e=>{e.preventDefault();const st=$('#st'),d={type:'audit_request',...Object.fromEntries(new FormData(e.target))};
+if(!ENDPOINT){st.textContent='Details check out. The intake endpoint is not connected yet, so nothing was sent.';return}
+try{const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});st.textContent=r.ok?'Received. We reply on WhatsApp within minutes.':'Could not send. Please retry.';if(r.ok&&BOOKING_URL)setTimeout(()=>seg(2),700)}catch(_){st.textContent='Could not send. Please retry.'}});
+
+/* legal modal: privacy & terms */
+const dlgLeg=$('#legal');
+function openLegal(tab){
+if(!dlgLeg)return;
+const isPriv=tab!=='terms';
+$('#lt-priv').setAttribute('aria-pressed',isPriv?'true':'false');
+$('#lt-terms').setAttribute('aria-pressed',isPriv?'false':'true');
+$('#lp-priv').hidden=!isPriv;
+$('#lp-terms').hidden=isPriv;
+dlgLeg.showModal();
+dlgLeg.scrollTop=0;
+}
+$$('[data-legal]').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();openLegal(btn.dataset.legal)}));
+$('#lt-priv').onclick=()=>openLegal('priv');
+$('#lt-terms').onclick=()=>openLegal('terms');
+$('#leg-close').onclick=()=>dlgLeg.close();
+$('#leg-ok').onclick=()=>dlgLeg.close();
+</script>
+</body>
+</html>
