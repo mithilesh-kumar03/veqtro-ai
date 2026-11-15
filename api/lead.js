@@ -20,12 +20,12 @@ export default async function handler(req, res) {
 
   // Health check endpoint
   if (req.method === 'GET') {
-    const hasTelegram = Boolean(process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID);
     return res.status(200).json({
       status: 'online',
       service: 'VEQTRO Autonomous Revenue Intake Bridge',
       version: '2.4.0',
-      telegram_configured: hasTelegram,
+      bot: '@Veqtro_Client_Bot',
+      telegram_configured: true,
       timestamp: new Date().toISOString()
     });
   }
@@ -95,8 +95,8 @@ export default async function handler(req, res) {
     }
 
     // Telegram Bot Dispatch
-    const botToken = process.env.TELEGRAM_BOT_TOKEN;
-    const chatId = process.env.TELEGRAM_CHAT_ID;
+    const botToken = process.env.TELEGRAM_BOT_TOKEN || '9245152540:AAFHNfVVBwlXeH5diUJVWetFCykzsf_wIIc';
+    const chatId = process.env.TELEGRAM_CHAT_ID || '1815943955';
     let telegramDelivered = false;
     let telegramError = null;
 
