@@ -472,7 +472,7 @@ body{background:#fff}
 <script>
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const BOOKING_URL=''; // your Cal.com or Calendly link, e.g. https://cal.com/yourname/audit
-const ENDPOINT=''; // set to your intake URL to receive form posts
+const ENDPOINT='/api/lead'; // live Vercel serverless ingestion endpoint with Telegram dispatch
 let px=0,py=0,tk=0;
 
 /* nav state + hero depth (logo and canvas move at different rates) */
