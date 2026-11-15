@@ -1,0 +1,10 @@
+{
+  "name": "veqtro-ai",
+  "version": "2.4.0",
+  "description": "VEQTRO AI — Autonomous Growth Infrastructure",
+  "type": "module",
+  "main": "index.html",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
