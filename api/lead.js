@@ -72,17 +72,21 @@ export default async function handler(req, res) {
       const company = payload.company || 'Not provided';
       const siteUrl = payload.url || 'Not provided';
       const email = payload.email || 'Not provided';
+      const phone = payload.phone || 'Not provided';
       const budget = payload.budget || 'Not specified';
+      const pkg = payload.package || 'General Forensic Audit';
       telegramText = [
-        `📑 <b>NEW EXECUTIVE FORENSIC AUDIT REQUEST</b>`,
+        `📑 <b>NEW EXECUTIVE INTAKE: ${pkg.toUpperCase()}</b>`,
         `━━━━━━━━━━━━━━━━━━━━━━━━`,
+        `📦 <b>Target Package:</b> <code>${pkg}</code>`,
         `🏢 <b>Company:</b> <b>${company}</b>`,
+        `📱 <b>WhatsApp:</b> <code>${phone}</code>`,
         `🌐 <b>Website:</b> ${siteUrl}`,
         `✉️ <b>Work Email:</b> <code>${email}</code>`,
         `💰 <b>Ad Spend:</b> ${budget}`,
         `🕒 <b>Time:</b> ${nowIST} IST`,
         `━━━━━━━━━━━━━━━━━━━━━━━━`,
-        `🚀 <i>Action: Compile 3-page A4 Obsidian Dossier and dispatch to prospect!</i>`
+        `🚀 <i>Action: Initiate onboarding dossier and WhatsApp speed-to-lead follow-up!</i>`
       ].join('\n');
     } else {
       telegramText = [

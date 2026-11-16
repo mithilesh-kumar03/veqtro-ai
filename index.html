@@ -202,12 +202,45 @@ body{background:#fff}
 .js .rv{opacity:0;transform:translateY(18px);transition:opacity .3s,transform .3s}
 .js .rv.in{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+/* Pricing & Systems Architecture */
+.pricing-sec{border-top:1px solid var(--ln);padding-top:clamp(3.5rem,8vw,6.5rem)}
+.pr-head{text-align:center;max-width:760px;margin:0 auto clamp(2.5rem,5vw,3.8rem)}
+.pr-head h2{margin:.6rem auto 1rem;max-width:18ch}
+.pr-head p{margin:0 auto}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.2vw,1.6rem);align-items:stretch}
+.pr-card{background:var(--sf);border:1px solid var(--ln);border-radius:20px;padding:clamp(1.5rem,3vw,2.2rem);display:flex;flex-direction:column;gap:1.15rem;position:relative;transition:transform .2s ease,border-color .2s ease;box-shadow:0 18px 36px -18px rgba(0,0,0,.7)}
+.pr-card:hover{transform:translateY(-4px);border-color:var(--cu)}
+.pr-card.featured{border-color:var(--am);box-shadow:0 0 36px rgba(200,125,59,.18);background:linear-gradient(180deg,rgba(200,125,59,.12) 0%,var(--sf) 42%)}
+.pop-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,var(--am),var(--cu));color:#09090D;font:700 .72rem var(--m);letter-spacing:.09em;text-transform:uppercase;padding:4px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(200,125,59,.45)}
+.pr-tier{font:600 .76rem var(--m);text-transform:uppercase;letter-spacing:.1em;color:var(--am)}
+.pr-card h3{font-size:clamp(1.85rem,3.2vw,2.4rem);margin:0;line-height:1.05}
+.pr-desc{font-size:.9rem;color:var(--soft);line-height:1.55;min-height:2.9rem}
+.pr-price-box{border-block:1px solid var(--ln);padding:1rem 0;display:grid;gap:.35rem}
+.pr-amount{display:flex;align-items:baseline;gap:.5rem}
+.pr-val{font:400 clamp(2.3rem,4.4vw,3.1rem)/1 var(--d);letter-spacing:.02em;color:var(--ink)}
+.pr-term{font:400 .76rem var(--m);color:var(--soft);text-transform:uppercase;letter-spacing:.06em}
+.pr-ret-wrap{display:flex;align-items:center;gap:.45rem;font:400 .8rem var(--m);color:var(--am)}
+.pr-ret{font-weight:600}
+.pr-sla{display:inline-flex;align-items:center;gap:.45rem;font:500 .76rem var(--m);color:var(--ink);background:rgba(255,255,255,.025);padding:5px 11px;border-radius:6px;border:1px solid var(--ln)}
+.pr-features{list-style:none;padding:0;margin:0;display:grid;gap:.65rem;flex:1}
+.pr-features li{font-size:.88rem;line-height:1.5;color:var(--ink);display:flex;align-items:flex-start;gap:.6rem}
+.pr-features li svg{width:15px;height:15px;flex:none;color:var(--am);margin-top:.2rem}
+.pr-features li.dim{color:var(--soft);font-size:.82rem}
+.pr-cta-box{margin-top:auto;padding-top:.4rem}
+.pr-guar{margin-top:clamp(2.5rem,5vw,3.5rem);background:rgba(200,125,59,.06);border:1px solid var(--ln);border-radius:16px;padding:1.3rem 1.8rem;display:flex;align-items:center;gap:1.2rem;justify-content:center;text-align:left}
+.pr-guar svg{width:28px;height:28px;flex:none;color:var(--am)}
+.pr-guar p{font-size:.9rem;color:var(--ink);margin:0;max-width:none;line-height:1.6}
+.pr-guar b{color:var(--am)}
+@media(max-width:980px){.price-grid{grid-template-columns:1fr;max-width:480px;margin:2rem auto 0}.pr-guar{flex-direction:column;text-align:center}}
 </style>
 </head>
 <body>
 <nav id="nav" aria-label="Primary">
 <a href="#top" aria-label="VEQTRO home" style="text-decoration:none"><span class="wm">VEQTRO</span></a>
+<div style="display:flex;align-items:center;gap:.8rem">
+<a href="#pricing" class="btn b2" style="border:none;min-height:auto;padding:.4rem .8rem;font-size:.88rem">Pricing &amp; Systems</a>
 <a class="btn b2" href="#audit-cta" data-open>Request audit</a>
+</div>
 </nav>
 <main id="top">
 <section class="hero" aria-labelledby="h1">
@@ -313,6 +346,119 @@ body{background:#fff}
 </div>
 </section>
 
+<section class="wrap pricing-sec" id="pricing" aria-labelledby="h-pr">
+<div class="pr-head rv">
+<p class="mono">Investment &amp; Systems Architecture</p>
+<h2 id="h-pr">Choose your growth engine. Fixed setup. Zero guesswork.</h2>
+<p>Every system captures after-hours inquiries in under 15 seconds, plugs revenue leaks, and auto-syncs with your team. Select the infrastructure engineered for your scale.</p>
+<div class="cur-box" style="margin:1.4rem auto 0;justify-content:center">
+<span>Display currency</span>
+<div class="cur-seg" role="group" aria-label="Select pricing currency">
+<button type="button" class="cur-btn" data-cur="USD" aria-pressed="true">$ USD</button>
+<button type="button" class="cur-btn" data-cur="INR" aria-pressed="false">₹ INR</button>
+<button type="button" class="cur-btn" data-cur="GBP" aria-pressed="false">£ GBP</button>
+</div>
+</div>
+</div>
+
+<div class="price-grid">
+<!-- Tier 1: Speed-to-Lead Core -->
+<article class="pr-card rv">
+<span class="pr-tier">Tier 01 · Single Studio &amp; Clinic</span>
+<h3>Speed-to-Lead Core</h3>
+<p class="pr-desc">Stop losing after-hours leads to slow callbacks. Auto-respond and qualify on WhatsApp in seconds.</p>
+<div class="pr-price-box">
+<div class="pr-amount">
+<span class="pr-val" data-usd="$499" data-inr="₹24,999" data-gbp="£399">₹24,999</span>
+<span class="pr-term">setup</span>
+</div>
+<div class="pr-ret-wrap">
+<span class="pr-ret" data-usd="+$99/mo" data-inr="+₹4,999/mo" data-gbp="+£79/mo">+₹4,999/mo</span>
+<span>hosting &amp; API maintenance</span>
+</div>
+</div>
+<div class="pr-sla">⚡ 5–7 Days Delivery · 30-Day SLA</div>
+<ul class="pr-features">
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>15-Second WhatsApp Auto-Responder</b> (Official Meta Cloud API)</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Instant Catalog &amp; 2026 Lookbook Auto-Sender</b> to client's phone</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>3-Tap Lead Qualification</b> (Budget, project size &amp; timeline)</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Instant Sales Rep WhatsApp Alerts</b> with full prospect dossier</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>1-Tap Google Maps Showroom Booking</b> to drive physical footfall</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Weekly Inbound Speed &amp; Lead Conversion Analytics Report</span></li>
+</ul>
+<div class="pr-cta-box">
+<button class="btn b2" type="button" data-plan="Speed-to-Lead Core" data-open style="width:100%">Select Core Engine →</button>
+</div>
+</article>
+
+<!-- Tier 2: Regional Growth Stack (Featured) -->
+<article class="pr-card featured rv">
+<span class="pop-badge">★ Most Popular · Regional Scaler</span>
+<span class="pr-tier">Tier 02 · Full Pipeline Engine</span>
+<h3>Regional Growth Stack</h3>
+<p class="pr-desc">The complete conversion engine from ad click to signed quote. Our most deployed system.</p>
+<div class="pr-price-box">
+<div class="pr-amount">
+<span class="pr-val" data-usd="$1,250" data-inr="₹65,000" data-gbp="£990">₹65,000</span>
+<span class="pr-term">setup</span>
+</div>
+<div class="pr-ret-wrap">
+<span class="pr-ret" data-usd="+$299/mo" data-inr="+₹14,999/mo" data-gbp="+£240/mo">+₹14,999/mo</span>
+<span>infrastructure &amp; CRM SLA</span>
+</div>
+</div>
+<div class="pr-sla" style="border-color:rgba(234,168,115,.4);color:var(--am)">⚡ 14 Days Delivery · 60-Day Full Warranty</div>
+<ul class="pr-features">
+<li class="dim"><span>Everything in Speed-to-Lead Core, PLUS:</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Interactive 60-Second Web Cost Estimator</b> on your website</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Dynamic WhatsApp PDF Quotation Engine</b> delivered instantly</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Two-Way CRM Synchronization</b> (Zoho / LeadSquared / HubSpot)</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Multi-Studio Geographic Territory Lead Routing</b> by city &amp; pincode</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Instagram DM to WhatsApp Direct Bridge</b> to convert social traffic</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Front-Desk Video SOPs &amp; Live Team Zoom Walkthrough</span></li>
+</ul>
+<div class="pr-cta-box">
+<button class="btn b1" type="button" data-plan="Regional Growth Stack" data-open style="width:100%;box-shadow:0 0 20px rgba(200,125,59,.35)">Deploy Growth Stack →</button>
+</div>
+</article>
+
+<!-- Tier 3: Enterprise Tech Partner -->
+<article class="pr-card rv">
+<span class="pr-tier">Tier 03 · Multi-Branch &amp; Franchise</span>
+<h3>Enterprise Tech Partner</h3>
+<p class="pr-desc">Bespoke mobile applications and dedicated senior systems engineering for regional networks.</p>
+<div class="pr-price-box">
+<div class="pr-amount">
+<span class="pr-val" data-usd="$2,850" data-inr="₹1,45,000" data-gbp="£2,250">₹1,45,000</span>
+<span class="pr-term">setup</span>
+</div>
+<div class="pr-ret-wrap">
+<span class="pr-ret" data-usd="+$599/mo" data-inr="+₹29,999/mo" data-gbp="+£480/mo">+₹29,999/mo</span>
+<span>dedicated engineering retainer</span>
+</div>
+</div>
+<div class="pr-sla">⚡ 28 Days Delivery · 1-Hour SLA Emergency Line</div>
+<ul class="pr-features">
+<li class="dim"><span>Everything in Regional Growth Stack, PLUS:</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Designer Field Sales Tablet App</b> (Quote clients on home visits)</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Offline Room Measurement &amp; Photo Intake Portal</b></span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Post-Sale Woodwork &amp; Installation Progress Tracking Portal</b></span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>24/7 AI Voice &amp; Chat Concierge</b> (English, Tamil, Hindi)</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Dedicated Systems Engineer Assigned</b> on WhatsApp / Slack</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>99.98% High-Availability Uptime SLA with 1-Hour Emergency Response</span></li>
+</ul>
+<div class="pr-cta-box">
+<button class="btn b2" type="button" data-plan="Enterprise Tech Partner" data-open style="width:100%">Request Enterprise Audit →</button>
+</div>
+</article>
+</div>
+
+<div class="pr-guar rv">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+<p><b>The 30-Day Speed Benchmark Guarantee:</b> If automated first-response latency on your digital ad campaigns is not under 60 seconds within 30 days of launch, our engineering team works for free until the benchmark is verified. Zero client risk.</p>
+</div>
+</section>
+
 <section class="wrap" aria-labelledby="h-a">
 <p class="mono">Confidential 3-page forensic audit</p>
 <h2 id="h-a">Three pages. Every leak located, scored and scheduled.</h2>
@@ -350,6 +496,7 @@ body{background:#fff}
 <li><a href="#h-p">Two-Way CRM Webhooks</a></li>
 <li><a href="#h-p">Offline Field Sales PWA</a></li>
 <li><a href="#estimator">Revenue Leak Estimator</a></li>
+<li><a href="#pricing">Systems &amp; Pricing</a></li>
 <li><a href="#speedtest">Live Intake Speed Test</a></li>
 <li><a href="#audit-cta" data-open>3-Page Forensic Audit</a></li>
 </ul>
@@ -448,6 +595,7 @@ body{background:#fff}
 <div class="seg" role="group" aria-label="How to proceed"><button type="button" id="sg1" aria-pressed="true">Request audit</button><button type="button" id="sg2" aria-pressed="false">Book a call now</button></div>
 <div id="bk" hidden><p>Pick a time for a consultation call. Your email and company details, if filled in, are passed to the scheduler.</p><a class="btn b1" id="bka" target="_blank" rel="noopener noreferrer">Open scheduler</a><p class="note" id="bkn"></p></div>
 <form id="f">
+<input type="hidden" name="package" id="pkgInput" value="General Forensic Audit">
 <label>Company<input name="company" required autocomplete="organization"></label>
 <label>Website URL<input name="url" type="url" required placeholder="https://" autocomplete="url"></label>
 <label>Monthly ad budget<input name="budget" required inputmode="numeric" placeholder="e.g. 12000"></label>
@@ -539,6 +687,12 @@ const curSaved={USD:{sp:12000,dv:8000},INR:{sp:500000,dv:800000},GBP:{sp:10000,d
 const fm=n=>{const c=CURRENCIES[activeCur];return c.symbol+Math.round(n).toLocaleString(c.locale)};
 const RTL={12:'Under 5 min',38:'30–60 min',65:'2–4 hours',84:'Next day'};
 
+function updatePricingCurrency(){
+const k=activeCur.toLowerCase();
+$$('.pr-val').forEach(el=>{if(el.dataset[k])el.textContent=el.dataset[k]});
+$$('.pr-ret').forEach(el=>{if(el.dataset[k])el.textContent=el.dataset[k]});
+}
+
 function setCurrency(newCur){
 if(!CURRENCIES[newCur]||newCur===activeCur)return;
 curSaved[activeCur]={sp:+$('#sp').value,dv:+$('#dv').value};
@@ -551,6 +705,7 @@ dvEl.value=curSaved[activeCur].dv;
 $$('.cur-btn').forEach(b=>b.setAttribute('aria-pressed',b.dataset.cur===activeCur?'true':'false'));
 const bi=$('input[name=budget]');if(bi)bi.placeholder='e.g. '+curSaved[activeCur].sp;
 calc();
+updatePricingCurrency();
 }
 $$('.cur-btn').forEach(b=>b.addEventListener('click',()=>setCurrency(b.dataset.cur)));
 
@@ -569,7 +724,7 @@ $('#lk').textContent=fm(v.leak);
 $('#rc').textContent=fm(v.rc);
 $('#aw').textContent=fm(v.aw);
 }
-$$('#estimator input').forEach(e=>e.addEventListener('input',calc));calc();
+$$('#estimator input').forEach(e=>e.addEventListener('input',calc));calc();updatePricingCurrency();
 
 /* board tear-sheet */
 const ts=$('#ts');
@@ -628,7 +783,13 @@ if(em)u.searchParams.set('email',em);if(/cal\.com$/.test(u.hostname))u.searchPar
 function seg(i){$('#sg1').setAttribute('aria-pressed',i===1);$('#sg2').setAttribute('aria-pressed',i===2);$('#f').hidden=i!==1;$('#bk').hidden=i!==2;
 if(i===2){const u=bookUrl(),a=$('#bka');a.hidden=!u;if(u)a.href=u;$('#bkn').textContent=u?'Opens in a new tab. Choose any open slot.':'Scheduler not connected yet: set BOOKING_URL in the page script to your Cal.com or Calendly link.'}}
 $('#sg1').onclick=()=>seg(1);$('#sg2').onclick=()=>seg(2);
-$$('[data-open]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();$('#st').textContent='';seg(1);m.showModal()}));$('#x').onclick=()=>m.close();
+$$('[data-open]').forEach(a=>a.addEventListener('click',e=>{
+e.preventDefault();$('#st').textContent='';
+const plan=a.dataset.plan,pi=$('#pkgInput'),mt=$('#mt');
+if(plan){if(pi)pi.value=plan;if(mt)mt.textContent='Request Walkthrough · '+plan;}
+else{if(pi)pi.value='General Forensic Audit';if(mt)mt.textContent='Request your forensic audit';}
+seg(1);m.showModal();
+}));$('#x').onclick=()=>m.close();
 $('#f').addEventListener('submit',async e=>{e.preventDefault();const st=$('#st'),d={type:'audit_request',...Object.fromEntries(new FormData(e.target))};
 if(!ENDPOINT){st.textContent='Details check out. The intake endpoint is not connected yet, so nothing was sent.';return}
 try{const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});st.textContent=r.ok?'Received. We reply on WhatsApp within minutes.':'Could not send. Please retry.';if(r.ok&&BOOKING_URL)setTimeout(()=>seg(2),700)}catch(_){st.textContent='Could not send. Please retry.'}});
