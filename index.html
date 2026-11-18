@@ -151,6 +151,21 @@ dialog.dlg-lg{width:min(720px,94vw);max-height:88svh;padding:clamp(1.5rem,4vw,2.
 .legal-body h4{font:600 .85rem var(--m);color:var(--am);letter-spacing:.04em;text-transform:uppercase;margin-top:.4rem}
 .legal-body p{font-size:.9rem;line-height:1.65;color:#ABA49C;max-width:none}
 .dlg-foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1.2rem;padding-top:1.1rem;border-top:1px solid var(--ln);flex-wrap:wrap}
+.dlg-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .65rem;border-radius:6px;background:rgba(200,125,59,.15);border:1px solid rgba(200,125,59,.35);font:600 .74rem var(--m);color:var(--am);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.4rem}
+.plugin-feature-box{background:rgba(200,125,59,.07);border:1px solid var(--ln);border-radius:14px;padding:1rem 1.2rem;margin-bottom:1.2rem;display:grid;gap:.6rem}
+.plugin-badge-row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+.plugin-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .65rem;border-radius:6px;background:rgba(16,16,23,.7);border:1px solid var(--ln);font:500 .74rem var(--m);color:var(--am);letter-spacing:.04em;text-transform:uppercase}
+.faq-filter-chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:.6rem 0 1rem}
+.faq-chip{background:none;border:1px solid var(--ln);border-radius:20px;padding:.35rem .8rem;color:var(--soft);font:500 .78rem var(--m);cursor:pointer;transition:all .2s ease}
+.faq-chip:hover{border-color:var(--cu);color:var(--ink)}
+.faq-chip.active{background:var(--cu);color:var(--bg);border-color:var(--cu);font-weight:700}
+.milestone-track{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:.4rem}
+.milestone-step{background:rgba(16,16,23,.8);border:1px solid var(--ln);border-radius:10px;padding:.8rem 1rem}
+.milestone-step b{display:block;color:var(--am);font:700 .9rem var(--m);margin-bottom:.2rem}
+.milestone-step p{font-size:.82rem;color:var(--soft);margin:0;line-height:1.4}
+.ft-inline-link{background:none;border:0;padding:0;color:var(--soft);font:400 .8rem var(--m);cursor:pointer;text-align:left;transition:color .2s}
+.ft-inline-link:hover{color:var(--am);text-decoration:underline}
+@media(max-width:640px){.milestone-track{grid-template-columns:1fr}}
 #cf{position:fixed;inset:0;pointer-events:none;z-index:50;width:100%;height:100%}
 [hidden]{display:none!important}
 .st-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,4rem);align-items:center}
@@ -512,33 +527,6 @@ body{background:#fff}
 </div>
 </article>
 </div>
-
-<!-- Transparent Commercial Terms -->
-<div class="pr-terms-box rv">
-<div class="pr-terms-card">
-<h4><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>Payment Terms</h4>
-<ul>
-<li><b>Milestone Advance Schedule:</b> 50% project advance before development begins; remaining 50% payable upon completion and before final handover or activation.</li>
-<li><b>Monthly Retainer:</b> Billed in advance, starting immediately after implementation, testing, and handover. Completely optional per service.</li>
-<li><b>Payment Schedule:</b> All invoices are payable within 7 calendar days of issuance unless otherwise agreed in writing.</li>
-<li><b>Statutory Taxes:</b> Goods and Services Tax (GST), where applicable, is charged additionally.</li>
-<li><b>Third-Party Expenses:</b> Hosting, domains, software subscriptions (CRM user seats, Google Workspace), Meta WhatsApp API credits, and ad spend are client-funded.</li>
-<li><b>Out-of-Scope Work:</b> Any work outside the approved scope requires a separate quotation and written approval.</li>
-</ul>
-</div>
-
-<div class="pr-terms-card">
-<h4><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>Cancellation &amp; Termination Policy</h4>
-<ul>
-<li><b>Notice Period:</b> Clients may cancel their monthly retainer by providing 30 calendar days' written notice to growth.veqtro@gmail.com.</li>
-<li><b>Services During Notice:</b> The retainer remains payable during the 30-day notice period, and all agreed monitoring and support services continue active.</li>
-<li><b>Development Fee Non-Refundability:</b> Development fees are non-refundable once implementation commences, except where required by applicable law or written agreement.</li>
-<li><b>Settlement on Exit:</b> Payments for completed work, delivered milestones, and approved expenses remain payable. Deliverables are handed over upon full invoice settlement.</li>
-<li><b>Transition Assistance:</b> Custom data export, migration, or transition assistance beyond agreed scope may be quoted separately.</li>
-<li><b>Material Breach:</b> Either party may terminate if a material breach remains unresolved after 15 days' written notice. Refunds follow signed agreement and statutory law.</li>
-</ul>
-</div>
-</div>
 </section>
 
 <section class="wrap" aria-labelledby="h-a">
@@ -581,7 +569,7 @@ body{background:#fff}
 <li><a href="#pricing">Systems &amp; Pricing</a></li>
 <li><a href="#speedtest">Live Intake Speed Test</a></li>
 <li><a href="#audit-cta" data-open>3-Page Forensic Audit</a></li>
-<li><a href="#faq" data-legal="faq">Frequently Asked Questions</a></li>
+<li><button type="button" class="ft-inline-link" data-modal="faq">Frequently Asked Questions</button></li>
 </ul>
 </div>
 
@@ -592,8 +580,9 @@ body{background:#fff}
 <li><span>Meta Cloud API Verified Tier</span></li>
 <li><span>SOC-2 Type II Architecture</span></li>
 <li><span>Strict Zero-Lead-Retention Protocol</span></li>
-<li><span>DPDP &amp; GDPR Data Compliant</span></li>
-<li><span>Senior Infrastructure SLA</span></li>
+<li><button type="button" class="ft-inline-link" data-modal="privacy">DPDP &amp; GDPR Data Policy</button></li>
+<li><button type="button" class="ft-inline-link" data-modal="terms">Terms of Service SLA</button></li>
+<li><button type="button" class="ft-inline-link" data-modal="payments">Payment Terms &amp; Cancellation</button></li>
 </ul>
 </div>
 
@@ -631,44 +620,49 @@ body{background:#fff}
 <div class="ft-bottom">
 <span>&copy; 2026 VEQTRO AI Inc. All rights reserved.</span>
 <div class="ft-legal">
-<button type="button" class="ft-leg-btn" data-legal="faq">Frequently Asked Questions (FAQ)</button>
-<button type="button" class="ft-leg-btn" data-legal="priv">Privacy Policy</button>
-<button type="button" class="ft-leg-btn" data-legal="terms">Terms &amp; Conditions</button>
+<button type="button" class="ft-leg-btn" data-modal="faq">Frequently Asked Questions (FAQ)</button>
+<button type="button" class="ft-leg-btn" data-modal="privacy">Privacy Policy</button>
+<button type="button" class="ft-leg-btn" data-modal="terms">Terms of Service</button>
+<button type="button" class="ft-leg-btn" data-modal="payments">Payment Terms &amp; Cancellation Policy</button>
 </div>
 </div>
 </div>
 </footer>
 
-<dialog id="legal" class="dlg-lg" aria-labelledby="leg-t">
+<!-- ======================================================== -->
+<!-- PLUGIN 1: Frequently Asked Questions (FAQ) Modal         -->
+<!-- ======================================================== -->
+<dialog id="modal-faq" class="dlg-lg" aria-labelledby="faq-title">
 <div class="dlg-head">
-<div><p class="mono">Knowledge, Governance &amp; Security</p><h3 id="leg-t">Enterprise Knowledge &amp; FAQ</h3></div>
-<button class="dlg-close" type="button" id="leg-close" aria-label="Close modal">&times;</button>
-</div>
-<div class="seg" role="group" aria-label="Knowledge and legal tabs">
-<button type="button" id="lt-faq" aria-pressed="true">Frequently Asked Questions (FAQ)</button>
-<button type="button" id="lt-priv" aria-pressed="false">Privacy &amp; Data Policy</button>
-<button type="button" id="lt-terms" aria-pressed="false">Terms of Service SLA</button>
+<div><span class="dlg-badge">Knowledge Hub</span><h3 id="faq-title">Frequently Asked Questions</h3></div>
+<button class="dlg-close" type="button" data-close-modal="modal-faq" aria-label="Close FAQ modal">&times;</button>
 </div>
 
-<div id="lp-faq" class="legal-body">
-<div style="position:sticky;top:0;background:#101017;padding-bottom:.8rem;z-index:2">
-<input type="search" id="faqSearch" placeholder="Filter questions (e.g. pricing, retainers, crm, ownership)…" style="width:100%;padding:.6rem .9rem;border-radius:8px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font:400 .85rem var(--m);outline:none">
+<div class="plugin-feature-box">
+<input type="search" id="faqSearch" placeholder="Search questions (e.g. pricing, retainers, crm, ownership, bundle)…" style="width:100%;padding:.65rem .9rem;border-radius:8px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font:400 .85rem var(--m);outline:none">
+<div class="faq-filter-chips">
+<button type="button" class="faq-chip active" data-filter="all">All (10)</button>
+<button type="button" class="faq-chip" data-filter="pillars">Core Pillars</button>
+<button type="button" class="faq-chip" data-filter="pricing">Pricing &amp; Retainers</button>
+<button type="button" class="faq-chip" data-filter="milestones">Milestones &amp; IP</button>
+</div>
 </div>
 
+<div class="legal-body">
 <div class="faq-group">
-<div class="faq-item">
+<div class="faq-item" data-cat="pillars">
 <h4>1. What is VEQTRO?</h4>
 <p>VEQTRO is a multi-industry technology and revenue infrastructure company. We engineer, deploy, and monitor the digital systems modern businesses depend on to attract high-intent enquiries, manage customer pipelines, automate backend processes, and eliminate operational friction across web, CRM, and communication channels.</p>
 </div>
 
-<div class="faq-item">
+<div class="faq-item" data-cat="pillars">
 <h4>2. What are VEQTRO's three core service pillars?</h4>
 <p><b>Service Pillar A — Website Development:</b> Professional digital flagships, high-converting landing pages, and responsive frontend systems that establish authority and capture enquiries.<br>
 <b>Service Pillar B — Custom CRM Development:</b> Tailored customer databases, stage tracking, rep assignment, and automated sales pipelines adapted to your workflows without rigid SaaS seat licenses.<br>
 <b>Service Pillar C — Backend Revenue Engine:</b> Low-latency webhooks, two-way API bridges, instant owner alerts (Telegram/WhatsApp), and &lt;10s automated qualification triage.</p>
 </div>
 
-<div class="faq-item">
+<div class="faq-item" data-cat="pricing">
 <h4>3. What is the pricing structure across tiers?</h4>
 <p>Each service follows a transparent one-time implementation fee plus an optional service-specific monthly maintenance retainer:<br>
 • <b>Foundation:</b> ₹7,500 setup + ₹3,500/month retainer (includes up to 2 monthly engineering support hours).<br>
@@ -677,56 +671,109 @@ body{background:#fff}
 Pricing is adapted to the signed Statement of Work (SOW). We never lock you into bloated packages you do not need.</p>
 </div>
 
-<div class="faq-item">
+<div class="faq-item" data-cat="pricing">
 <h4>4. How does the 10% Combined Service Discount work?</h4>
 <p>When contracting all three core development services (Website Development + Custom CRM Development + Backend Revenue Engine) together in a single engagement, you receive an immediate 10% discount off the total combined one-time development fee. The discount applies to development fees; monthly retainers and third-party tools are funded separately.</p>
 </div>
 
-<div class="faq-item">
+<div class="faq-item" data-cat="pricing">
 <h4>5. Are monthly maintenance retainers mandatory?</h4>
 <p>No. Monthly retainers are completely optional and service-specific. If you contract Website Development, you may elect Website Maintenance without purchasing CRM or Backend retainers. Retainers cover continuous cloud monitoring, security patches, performance tuning, and capped monthly support hours.</p>
 </div>
 
-<div class="faq-item">
+<div class="faq-item" data-cat="milestones">
 <h4>6. What are the commercial payment milestones?</h4>
 <p>All development projects follow a clear milestone structure: a 50% project advance prior to engineering commencement, and the remaining 50% upon deliverable completion and passing the QA Gate before final handover. Invoices are payable within 7 calendar days. Statutory taxes (GST), where applicable, are additional.</p>
 </div>
 
-<div class="faq-item">
+<div class="faq-item" data-cat="milestones">
 <h4>7. What is the cancellation and termination policy?</h4>
 <p>Clients may cancel their ongoing monthly maintenance retainer at any time by providing 30 calendar days' written notice to growth.veqtro@gmail.com. Services and monitoring remain active throughout the 30-day notice period. One-time development fees are strictly non-refundable once implementation has commenced.</p>
 </div>
 
-<div class="faq-item">
+<div class="faq-item" data-cat="pricing">
 <h4>8. Are third-party software subscriptions included?</h4>
 <p>No. Third-party software subscriptions (such as cloud hosting compute, domain registration, CRM user seats, or Google Workspace) and Meta WhatsApp Cloud API conversation credits are funded directly by the client to their respective providers. VEQTRO configures, connects, and maintains the technical infrastructure.</p>
 </div>
 
-<div class="faq-item">
+<div class="faq-item" data-cat="milestones">
 <h4>9. Who owns the intellectual property and client data?</h4>
 <p>The client retains 100% exclusive, perpetual ownership of all CRM records, customer conversation histories, brand assets, code repositories, and qualification workflows deployed into their infrastructure. VEQTRO operates as a zero-retention transit layer.</p>
 </div>
 
-<div class="faq-item">
+<div class="faq-item" data-cat="pillars">
 <h4>10. How can I schedule a discovery call or request a walkthrough?</h4>
 <p>You can click 'Request Forensic Audit' or 'Explore Core Service Pillars' to open the consultation booking modal, pick a live slot via Calendly, or reach our senior engineering desk directly on WhatsApp at +91 93632 12934.</p>
 </div>
 </div>
 <p id="faqNoMatch" style="display:none;color:var(--soft);font-style:italic;text-align:center;padding:1.5rem 0;">No questions match your filter. Contact us directly at growth.veqtro@gmail.com.</p>
 </div>
+<div class="dlg-foot">
+<span class="mono">VEQTRO AI Inc. · Enterprise Knowledge Hub</span>
+<button class="btn b2" type="button" data-close-modal="modal-faq">Close FAQ</button>
+</div>
+</dialog>
 
-<div id="lp-priv" class="legal-body" hidden>
-<h4>1. Zero-Retention &amp; Data Sovereignty</h4>
-<p>VEQTRO operates as an infrastructure transit layer. Prospect information captured through Meta Lead Ads, WhatsApp Cloud API, and web flagships is securely dispatched via end-to-end encrypted webhooks directly into your proprietary CRM (LeadSquared, Salesforce, HubSpot, or Zoho). VEQTRO does not sell, broker, monetize, or retain client lead records on persistent storage.</p>
-<h4>2. WhatsApp Business &amp; Meta Tech Tier Compliance</h4>
-<p>All automated Speed-to-Lead intake workflows adhere strictly to the Meta WhatsApp Business Messaging Policy. Automated replies, qualification flows, and appointment reminders are initiated only upon explicit user opt-in through lead form submission or direct message initiation. Opt-out mechanisms (e.g., replying 'STOP') are processed with instant cessation SLAs.</p>
-<h4>3. Indian DPDP Act (2023) &amp; Global GDPR Protocols</h4>
-<p>For Indian enterprise deployments, all webhook data handling complies with the Digital Personal Data Protection Act (DPDP) 2023. European and UK enterprise deployments operate under strict GDPR Data Processing Addendums (DPA) with regional data residency guarantees.</p>
-<h4>4. Encryption Standards</h4>
-<p>All payload transmissions utilize TLS 1.3 cryptographic protocols. Bi-directional CRM webhook secret signatures and authentication tokens are encrypted at rest using AES-256 key management.</p>
+<!-- ======================================================== -->
+<!-- PLUGIN 2: Privacy & Data Sovereignty Policy Modal        -->
+<!-- ======================================================== -->
+<dialog id="modal-privacy" class="dlg-lg" aria-labelledby="priv-title">
+<div class="dlg-head">
+<div><span class="dlg-badge">Trust &amp; Governance</span><h3 id="priv-title">Privacy &amp; Data Sovereignty Policy</h3></div>
+<button class="dlg-close" type="button" data-close-modal="modal-privacy" aria-label="Close privacy modal">&times;</button>
 </div>
 
-<div id="lp-terms" class="legal-body" hidden>
+<div class="plugin-feature-box">
+<div class="plugin-badge-row">
+<span class="plugin-badge">✓ Zero Retention Protocol</span>
+<span class="plugin-badge">✓ DPDP Act 2023 Compliant</span>
+<span class="plugin-badge">✓ GDPR DPA Ready</span>
+<span class="plugin-badge">✓ TLS 1.3 / AES-256</span>
+</div>
+<p style="font-size:.82rem;color:var(--soft);margin:0;line-height:1.45">VEQTRO operates strictly as a zero-retention transit architecture. Inbound leads dispatch directly to your private CRM without intermediary data monetization or cold storage retention.</p>
+</div>
+
+<div class="legal-body">
+<h4>1. Zero-Retention &amp; Data Sovereignty</h4>
+<p>Prospect information captured through Meta Lead Ads, WhatsApp Cloud API, and web flagships is securely dispatched via end-to-end encrypted webhooks directly into your proprietary CRM (LeadSquared, Salesforce, HubSpot, or Zoho). VEQTRO does not sell, broker, monetize, or retain client lead records on persistent storage.</p>
+
+<h4>2. WhatsApp Business &amp; Meta Tech Tier Compliance</h4>
+<p>All automated Speed-to-Lead intake workflows adhere strictly to the Meta WhatsApp Business Messaging Policy. Automated replies, qualification flows, and appointment reminders are initiated only upon explicit user opt-in through lead form submission or direct message initiation. Opt-out mechanisms (e.g., replying 'STOP') are processed with instant cessation SLAs.</p>
+
+<h4>3. Indian DPDP Act (2023) &amp; Global GDPR Protocols</h4>
+<p>For Indian enterprise deployments, all webhook data handling complies with the Digital Personal Data Protection Act (DPDP) 2023. European and UK enterprise deployments operate under strict GDPR Data Processing Addendums (DPA) with regional data residency guarantees.</p>
+
+<h4>4. Encryption Standards</h4>
+<p>All payload transmissions utilize TLS 1.3 cryptographic protocols. Bi-directional CRM webhook secret signatures and authentication tokens are encrypted at rest using AES-256 key management.</p>
+
+<h4>5. Dedicated Security Desk</h4>
+<p>For audit requests, DPA execution, or compliance validation, contact our security desk at <a href="mailto:growth.veqtro@gmail.com" style="color:var(--c-co);text-decoration:underline">growth.veqtro@gmail.com</a>. Formal security responses are dispatched within 2 business hours.</p>
+</div>
+<div class="dlg-foot">
+<span class="mono">VEQTRO AI Inc. · Data Security Governance</span>
+<button class="btn b2" type="button" data-close-modal="modal-privacy">Acknowledge &amp; Close</button>
+</div>
+</dialog>
+
+<!-- ======================================================== -->
+<!-- PLUGIN 3: Terms of Service & SLA Modal                   -->
+<!-- ======================================================== -->
+<dialog id="modal-terms" class="dlg-lg" aria-labelledby="terms-title">
+<div class="dlg-head">
+<div><span class="dlg-badge">Legal SLA</span><h3 id="terms-title">Terms of Service &amp; Engineering SLA</h3></div>
+<button class="dlg-close" type="button" data-close-modal="modal-terms" aria-label="Close terms modal">&times;</button>
+</div>
+
+<div class="plugin-feature-box">
+<div class="plugin-badge-row">
+<span class="plugin-badge">✓ 100% Client IP Ownership</span>
+<span class="plugin-badge">✓ 10% Bundle Discount Terms</span>
+<span class="plugin-badge">✓ Zero Lock-In Retainers</span>
+</div>
+<p style="font-size:.82rem;color:var(--soft);margin:0;line-height:1.45">Governs commercial deliverables across Service Pillar A (Websites), Pillar B (CRMs), and Pillar C (Backend Revenue Engines).</p>
+</div>
+
+<div class="legal-body">
 <h4>1. Three Core Service Pillars &amp; Scope of Work</h4>
 <p>VEQTRO is a multi-industry technology and revenue infrastructure company providing three modular, independently purchasable development services: (A) Website Development, (B) Custom CRM Development, and (C) Backend Revenue Engine. Deliverables are defined by service tier and strictly adapted to the signed proposal or Statement of Work (SOW). No service implies or provides unlimited development, unlimited support, or unlisted software licenses.</p>
 
@@ -736,18 +783,69 @@ Pricing is adapted to the signed Statement of Work (SOW). We never lock you into
 <h4>3. One-Time Development vs. Optional Monthly Retainer</h4>
 <p>Each service comprises an implementation development fee followed by an optional service-specific monthly maintenance retainer. The development fee covers architecture, UI/UX, database modeling, API configuration, and handover. The optional monthly retainer covers continuous cloud monitoring, security patches, performance tuning, and capped monthly support hours. Additional development is quoted separately.</p>
 
-<h4>4. Commercial Payment Terms</h4>
-<p>All development projects follow a milestone structure: 50% project advance payable prior to commencement of work, and the remaining 50% payable upon completion of scoped deliverables and passing the QA Gate before final handover or live activation. Monthly retainers are billed in advance for each 30-day service cycle after project handover. Invoices are payable within 7 calendar days of issuance unless otherwise agreed in writing. Statutory taxes (GST), where applicable, are additional. Hosting, domain registration, software user licenses, Meta WhatsApp Cloud API credits, and ad spend are client-funded. Overdue accounts past notice may pause services.</p>
+<h4>4. Monthly Engineering Allocation &amp; SLA</h4>
+<p>Retainers include capped monthly support allocations (2 hours for Foundation, 5 hours for Growth, 12 hours for Advanced). Additional engineering hours are billed at agreed rate cards. Critical webhook downtime tickets carry a 2-hour priority triage response window during business hours.</p>
 
-<h4>5. Cancellation, Termination &amp; Refund Policy</h4>
-<p>Clients may cancel their ongoing monthly retainer at any time by providing 30 calendar days' written notice to growth.veqtro@gmail.com. The retainer remains payable during the 30-day notice period, and all agreed monitoring and support services continue active throughout that window. One-time development fees are strictly non-refundable once implementation work has commenced, except where required by applicable consumer law or written agreement. Payments for completed work and approved expenses remain payable. On termination and upon settlement of outstanding invoices, VEQTRO will deliver all agreed completed deliverables. Either party may terminate for material breach unresolved after 15 days' written notice. Prepaid monthly fees are not automatically refundable; handled according to contract and applicable law.</p>
-
-<h4>6. 100% Client Intellectual Property &amp; Data Ownership</h4>
-<p>The client retains exclusive, perpetual ownership of all CRM records, customer conversation histories, brand assets, and custom qualification state machines deployed into their infrastructure. VEQTRO operates as a zero-retention transit layer.</p>
+<h4>5. 100% Client Intellectual Property &amp; Data Ownership</h4>
+<p>The client retains exclusive, perpetual ownership of all CRM records, customer conversation histories, brand assets, code repositories, and custom qualification state machines deployed into their infrastructure. VEQTRO operates as a zero-retention transit layer.</p>
 </div>
 <div class="dlg-foot">
-<span class="mono">VEQTRO AI Inc. · Enterprise Architecture &amp; Compliance</span>
-<button class="btn b2" type="button" id="leg-ok">Acknowledge &amp; Close</button>
+<span class="mono">VEQTRO AI Inc. · Commercial Legal Agreement</span>
+<button class="btn b2" type="button" data-close-modal="modal-terms">Acknowledge &amp; Close</button>
+</div>
+</dialog>
+
+<!-- ======================================================== -->
+<!-- PLUGIN 4: Payment Terms & Cancellation Policy Modal      -->
+<!-- ======================================================== -->
+<dialog id="modal-payments" class="dlg-lg" aria-labelledby="pay-title">
+<div class="dlg-head">
+<div><span class="dlg-badge">Commercial Model</span><h3 id="pay-title">Payment Terms &amp; Cancellation Policy</h3></div>
+<button class="dlg-close" type="button" data-close-modal="modal-payments" aria-label="Close payments modal">&times;</button>
+</div>
+
+<div class="plugin-feature-box">
+<span class="mono" style="color:var(--am);font-size:.74rem;letter-spacing:.06em">Milestone Advance Architecture</span>
+<div class="milestone-track">
+<div class="milestone-step">
+<b>Stage 1 · 50% Project Advance</b>
+<p>Payable prior to commencement of engineering work to initiate architecture &amp; development.</p>
+</div>
+<div class="milestone-step">
+<b>Stage 2 · 50% Final Milestone</b>
+<p>Payable upon completion of scoped deliverables and passing QA Gate verification before live handover.</p>
+</div>
+</div>
+</div>
+
+<div class="legal-body">
+<h4>1. Milestone Structure &amp; Upfront Commitment</h4>
+<p>All development projects follow a transparent milestone structure: a 50% project advance payable prior to commencement of engineering work, and the remaining 50% payable upon completion of scoped deliverables and passing the QA Gate before final handover or live credential activation. Work commences only upon receipt of cleared funds.</p>
+
+<h4>2. Optional Monthly Retainer Billing</h4>
+<p>Monthly retainers are billed in advance for each 30-day service cycle, commencing after system handover and testing. Retainers are completely optional per service (e.g., contracting Website Maintenance does not require CRM or Backend retainers). Invoices are payable within 7 calendar days of issuance unless otherwise agreed in writing.</p>
+
+<h4>3. Statutory Taxes &amp; Invoicing</h4>
+<p>Statutory taxes, including Goods and Services Tax (GST 18%) where applicable, are charged additionally. All issued invoices specify bank remittance details, tax identification numbers, and payment due dates.</p>
+
+<h4>4. Transparent Client-Funded Third-Party Expenses</h4>
+<p>Third-party subscriptions (including cloud hosting compute, domain registration, CRM user seat licenses, Google Workspace) and Meta WhatsApp Cloud API conversation credits are funded directly by the client using their company billing card. VEQTRO configures, connects, and maintains the technical infrastructure without hidden markups.</p>
+
+<h4>5. Cancellation &amp; Retainer Termination Policy</h4>
+<p>Clients may cancel their ongoing monthly maintenance retainer at any time by providing 30 calendar days' written notice to <a href="mailto:growth.veqtro@gmail.com" style="color:var(--c-co);text-decoration:underline">growth.veqtro@gmail.com</a>. The monthly retainer remains payable during the 30-day notice period, and all agreed monitoring and support services continue active throughout that window.</p>
+
+<h4>6. Non-Refundability of Development Fees</h4>
+<p>One-time development fees are strictly non-refundable once implementation work has commenced, except where required by applicable statutory consumer protection law or agreed otherwise in writing. Payments for completed work, delivered milestones, and approved expenses remain payable.</p>
+
+<h4>7. Settlement &amp; Deliverables Handover on Exit</h4>
+<p>On termination and subject to settlement of all outstanding invoices, VEQTRO will deliver all agreed completed deliverables, credentials, and code repositories. Any custom data export, migration, or transition assistance beyond the agreed scope will be quoted separately.</p>
+
+<h4>8. Material Breach Resolution</h4>
+<p>Either party may terminate immediately if a material breach remains unresolved after 15 calendar days' written notice. Prepaid monthly fees are not automatically refundable; any applicable refund will be handled according to the signed contract and applicable law.</p>
+</div>
+<div class="dlg-foot">
+<span class="mono">VEQTRO AI Inc. · Transparent Milestone Model</span>
+<button class="btn b2" type="button" data-close-modal="modal-payments">Acknowledge &amp; Close</button>
 </div>
 </dialog>
 
@@ -1104,61 +1202,74 @@ $('#f').addEventListener('submit',async e=>{
   if(fBtn) fBtn.disabled=false;
 });
 
-/* legal and FAQ modal: faq, privacy & terms */
-const dlgLeg=$('#legal');
-function openLegal(tab){
-  if(!dlgLeg)return;
-  const t=(tab||'faq').toLowerCase();
-  const isFaq=t==='faq';
-  const isTerms=t==='terms';
-  const isPriv=!isFaq&&!isTerms;
-
-  const ltFaq=$('#lt-faq'),ltPriv=$('#lt-priv'),ltTerms=$('#lt-terms');
-  const lpFaq=$('#lp-faq'),lpPriv=$('#lp-priv'),lpTerms=$('#lp-terms');
-  const legT=$('#leg-t');
-
-  if(ltFaq)ltFaq.setAttribute('aria-pressed',isFaq?'true':'false');
-  if(ltPriv)ltPriv.setAttribute('aria-pressed',isPriv?'true':'false');
-  if(ltTerms)ltTerms.setAttribute('aria-pressed',isTerms?'true':'false');
-
-  if(lpFaq)lpFaq.hidden=!isFaq;
-  if(lpPriv)lpPriv.hidden=!isPriv;
-  if(lpTerms)lpTerms.hidden=!isTerms;
-
-  if(legT){
-    if(isFaq)legT.textContent='Frequently Asked Questions (FAQ)';
-    else if(isTerms)legT.textContent='Terms of Service SLA';
-    else legT.textContent='Privacy & Data Governance';
-  }
-
-  dlgLeg.showModal();
-  dlgLeg.scrollTop=0;
+/* Independent Footer Plugin Modals */
+function openModal(id){
+  const dlg=$('#'+id);
+  if(!dlg)return;
+  dlg.showModal();
+  dlg.scrollTop=0;
+}
+function closeModal(id){
+  const dlg=$('#'+id);
+  if(dlg)dlg.close();
 }
 
-$$('[data-legal]').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();openLegal(btn.dataset.legal)}));
-if($('#lt-faq'))$('#lt-faq').onclick=()=>openLegal('faq');
-if($('#lt-priv'))$('#lt-priv').onclick=()=>openLegal('priv');
-if($('#lt-terms'))$('#lt-terms').onclick=()=>openLegal('terms');
-if($('#leg-close'))$('#leg-close').onclick=()=>dlgLeg.close();
-if($('#leg-ok'))$('#leg-ok').onclick=()=>dlgLeg.close();
-
-// Live search filter inside FAQ plugin
-const faqSearch=$('#faqSearch');
-if(faqSearch){
-  faqSearch.addEventListener('input',e=>{
-    const q=e.target.value.toLowerCase().trim();
-    const items=$$('.faq-item');
-    let matched=0;
-    items.forEach(it=>{
-      const txt=it.textContent.toLowerCase();
-      const match=!q||txt.includes(q);
-      it.style.display=match?'block':'none';
-      if(match)matched++;
-    });
-    const noMatch=$('#faqNoMatch');
-    if(noMatch)noMatch.style.display=matched===0?'block':'none';
+// Trigger buttons for all plugins (FAQ, Privacy, Terms, Payments)
+$$('[data-modal]').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    e.preventDefault();
+    openModal('modal-'+btn.dataset.modal);
   });
+});
+
+// Close buttons inside each modal
+$$('[data-close-modal]').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    e.preventDefault();
+    closeModal(btn.dataset.closeModal);
+  });
+});
+
+// Dismiss any dialog when clicking its outer backdrop
+$$('dialog').forEach(dlg=>{
+  dlg.addEventListener('click',e=>{
+    if(e.target===dlg) dlg.close();
+  });
+});
+
+// FAQ Plugin: Live Search Filter + Category Chips
+const faqSearch=$('#faqSearch');
+let activeFaqFilter='all';
+
+function filterFaq(){
+  const q=(faqSearch ? faqSearch.value : '').toLowerCase().trim();
+  const items=$$('#modal-faq .faq-item');
+  let matched=0;
+  items.forEach(it=>{
+    const cat=it.dataset.cat||'all';
+    const text=it.textContent.toLowerCase();
+    const matchesQuery=!q||text.includes(q);
+    const matchesCat=activeFaqFilter==='all'||cat===activeFaqFilter;
+    const isVisible=matchesQuery&&matchesCat;
+    it.style.display=isVisible?'block':'none';
+    if(isVisible) matched++;
+  });
+  const noMatch=$('#faqNoMatch');
+  if(noMatch) noMatch.style.display=matched===0?'block':'none';
 }
+
+if(faqSearch){
+  faqSearch.addEventListener('input',filterFaq);
+}
+
+$$('.faq-chip').forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    $$('.faq-chip').forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    activeFaqFilter=chip.dataset.filter;
+    filterFaq();
+  });
+});
 </script>
 </body>
 </html>
