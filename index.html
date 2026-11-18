@@ -242,17 +242,6 @@ body{background:#fff}
 .pr-terms-card ul{list-style:none;padding:0;margin:0;display:grid;gap:.55rem}
 .pr-terms-card li{font-size:.84rem;color:var(--ink);line-height:1.55;display:flex;align-items:flex-start;gap:.5rem}
 .pr-terms-card li::before{content:'•';color:var(--am);font-weight:700}
-.pr-faq-sec{margin-top:clamp(2.5rem,5vw,3.5rem)}
-.pr-faq-head{text-align:center;margin-bottom:1.8rem}
-.pr-faq-head h3{font-size:clamp(1.5rem,2.8vw,2rem);margin:.4rem 0 0}
-.pr-faq-list{display:grid;gap:.8rem;max-width:880px;margin:0 auto}
-.pr-faq-item{background:var(--sf);border:1px solid var(--ln);border-radius:12px;overflow:hidden;transition:border-color .2s}
-.pr-faq-item[open]{border-color:var(--cu)}
-.pr-faq-summary{padding:1rem 1.3rem;font-weight:600;font-size:.92rem;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none}
-.pr-faq-summary::-webkit-details-marker{display:none}
-.pr-faq-summary::after{content:'+';font-size:1.3rem;color:var(--am);font-weight:400;transition:transform .2s}
-.pr-faq-item[open] .pr-faq-summary::after{content:'−';color:var(--cu)}
-.pr-faq-body{padding:0 1.3rem 1.1rem;font-size:.86rem;color:var(--soft);line-height:1.6;border-top:1px solid rgba(255,255,255,.04);margin-top:.4rem;padding-top:.8rem}
 @media(max-width:980px){.price-grid{grid-template-columns:1fr;max-width:480px;margin:2rem auto 0}.pr-guar{flex-direction:column;text-align:center}.pr-terms-box{grid-template-columns:1fr}}
 </style>
 </head>
@@ -550,45 +539,6 @@ body{background:#fff}
 </ul>
 </div>
 </div>
-
-<!-- Frequently Asked Questions -->
-<div class="pr-faq-sec rv">
-<div class="pr-faq-head">
-<p class="mono">Clear Scope Boundaries</p>
-<h3>Frequently Asked Questions</h3>
-</div>
-<div class="pr-faq-list">
-<details class="pr-faq-item">
-<summary class="pr-faq-summary">How do the three core service pillars work together?</summary>
-<div class="pr-faq-body">Each service is modular and independently purchasable, but designed to connect seamlessly: your <b>Website (Service A)</b> captures qualified enquiries; your <b>Custom CRM (Service B)</b> organises and manages customer pipelines; and your <b>Backend Revenue Engine (Service C)</b> connects systems, processes data, and automates notifications. When purchased together, you receive 10% off the combined one-time development fees.</div>
-</details>
-
-<details class="pr-faq-item">
-<summary class="pr-faq-summary">Are these fixed package prices or starting estimates?</summary>
-<div class="pr-faq-body">The figures shown are indicative starting prices for standard scopes. Actual quotations are adapted to your business's technical architecture, integration complexity, number of pipelines, and custom workflow requirements. Every project begins with a clear, written Statement of Work (SOW).</div>
-</details>
-
-<details class="pr-faq-item">
-<summary class="pr-faq-summary">Are monthly retainers mandatory?</summary>
-<div class="pr-faq-body">No. Monthly retainers are completely optional and service-specific. If you purchase Website Development, you may opt for Website Maintenance (₹3k–₹7.5k/mo) without contracting CRM or Backend retainers. Retainers cover continuous uptime monitoring, security patches, minor copy/image updates, and dedicated monthly support hours.</div>
-</details>
-
-<details class="pr-faq-item">
-<summary class="pr-faq-summary">What are the payment milestones and invoice terms?</summary>
-<div class="pr-faq-body">All development projects follow a 50% project advance before work begins, and the remaining 50% upon completion and passing the QA Gate before final handover. Monthly retainers are billed in advance after implementation. Invoices are payable within 7 calendar days. GST (18%) is additional where applicable.</div>
-</details>
-
-<details class="pr-faq-item">
-<summary class="pr-faq-summary">How does the 10% combined service discount work?</summary>
-<div class="pr-faq-body">When a business contracts all three core development services (Website Development + Custom CRM Development + Backend Revenue Engine) together in a single engagement, you receive an immediate 10% discount off the total combined one-time development fee. The discount does not apply to monthly retainers, taxes, or third-party costs.</div>
-</details>
-
-<details class="pr-faq-item">
-<summary class="pr-faq-summary">Are third-party software subscriptions and API charges included?</summary>
-<div class="pr-faq-body">No. Third-party software subscriptions (such as hosting compute, domain registration, CRM user seats, or Google Workspace) and Meta WhatsApp Cloud API conversation credits are billed directly by the respective providers to your company card. VEQTRO engineers, configures, and maintains the technical infrastructure.</div>
-</details>
-</div>
-</div>
 </section>
 
 <section class="wrap" aria-labelledby="h-a">
@@ -682,8 +632,8 @@ body{background:#fff}
 <span>&copy; 2026 VEQTRO AI Inc. All rights reserved.</span>
 <div class="ft-legal">
 <button type="button" class="ft-leg-btn" data-legal="faq">Frequently Asked Questions (FAQ)</button>
-<button type="button" class="ft-leg-btn" data-legal="terms">Terms and Condition</button>
 <button type="button" class="ft-leg-btn" data-legal="priv">Privacy Policy</button>
+<button type="button" class="ft-leg-btn" data-legal="terms">Terms &amp; Conditions</button>
 </div>
 </div>
 </div>
