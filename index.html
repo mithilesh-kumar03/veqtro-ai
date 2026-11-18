@@ -228,24 +228,26 @@ body{background:#fff}
 .pr-card:hover{transform:translateY(-4px);border-color:var(--cu)}
 .pr-card.featured{border-color:var(--am);box-shadow:0 0 36px rgba(200,125,59,.18);background:linear-gradient(180deg,rgba(200,125,59,.12) 0%,var(--sf) 42%)}
 .pop-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,var(--am),var(--cu));color:#09090D;font:700 .72rem var(--m);letter-spacing:.09em;text-transform:uppercase;padding:4px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(200,125,59,.45)}
-.pr-tier{font:600 .76rem var(--m);text-transform:uppercase;letter-spacing:.1em;color:var(--am)}
-.pr-card h3{font-size:clamp(1.85rem,3.2vw,2.4rem);margin:0;line-height:1.05}
-.pr-desc{font-size:.9rem;color:var(--soft);line-height:1.55;min-height:2.9rem}
-.pr-price-box{border-block:1px solid var(--ln);padding:1rem 0;display:grid;gap:.35rem}
-.pr-amount{display:flex;align-items:baseline;gap:.5rem}
+.pr-tier{font:600 .76rem var(--m);text-transform:uppercase;letter-spacing:.1em;color:var(--am);height:32px;display:flex;align-items:center}
+.pr-card h3{font-size:clamp(1.85rem,3.2vw,2.4rem);margin:0;line-height:1.05;height:84px;min-height:84px;display:flex;align-items:flex-start}
+.pr-desc{font-size:.9rem;color:var(--soft);line-height:1.55;height:90px;min-height:90px;margin:0}
+.pr-price-box{border-block:1px solid var(--ln);padding:1rem 0;height:206px;min-height:206px;display:flex;flex-direction:column;justify-content:space-between}
+.pr-amount{display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
 .pr-val{font:400 clamp(2.3rem,4.4vw,3.1rem)/1 var(--d);letter-spacing:.02em;color:var(--ink)}
 .pr-term{font:400 .76rem var(--m);color:var(--soft);text-transform:uppercase;letter-spacing:.06em}
-.pr-ret-wrap{display:flex;align-items:center;gap:.45rem;font:400 .8rem var(--m);color:var(--am)}
+.pr-ret-wrap{display:flex;align-items:flex-start;gap:.45rem;font:400 .8rem var(--m);color:var(--am);flex-wrap:wrap;min-height:42px}
 .pr-ret{font-weight:600}
-.pr-sla{display:inline-flex;align-items:center;gap:.45rem;font:500 .76rem var(--m);color:var(--ink);background:rgba(255,255,255,.025);padding:5px 11px;border-radius:6px;border:1px solid var(--ln)}
-.pr-features{list-style:none;padding:0;margin:0;display:grid;gap:.65rem;flex:1}
+.pr-sla{display:inline-flex;align-items:center;justify-content:center;height:42px;min-height:42px;gap:.45rem;font:500 .76rem var(--m);color:var(--ink);background:rgba(255,255,255,.025);padding:5px 11px;border-radius:6px;border:1px solid var(--ln);width:100%;text-align:center}
+.pr-features{list-style:none;padding:0;margin:0;display:grid;gap:.65rem}
+.pr-card > .pr-features:first-of-type{min-height:375px}
+.pr-card > .pr-features:last-of-type{min-height:180px}
 .pr-features li{font-size:.86rem;line-height:1.5;color:var(--ink);display:flex;align-items:flex-start;gap:.6rem}
 .pr-features li svg{width:15px;height:15px;flex:none;color:var(--am);margin-top:.2rem}
 .pr-features li.dim{color:var(--soft);font-size:.82rem}
-.pr-grp-title{font:700 .72rem var(--m);text-transform:uppercase;letter-spacing:.09em;color:var(--am);margin-top:.6rem;display:flex;align-items:center;gap:.45rem}
+.pr-grp-title{font:700 .72rem var(--m);text-transform:uppercase;letter-spacing:.09em;color:var(--am);margin-top:.6rem;display:flex;align-items:center;gap:.45rem;height:24px;min-height:24px}
 .pr-grp-title::after{content:'';flex:1;height:1px;background:var(--ln)}
-.pr-scope-tag{font:500 .72rem var(--m);color:var(--soft);background:rgba(255,255,255,.03);padding:7px 11px;border-radius:6px;border:1px dashed var(--ln);line-height:1.45;margin-top:.3rem}
-.pr-cta-box{margin-top:auto;padding-top:.4rem}
+.pr-scope-tag{font:500 .72rem var(--m);color:var(--soft);background:rgba(255,255,255,.03);padding:8px 12px;border-radius:6px;border:1px dashed var(--ln);line-height:1.45;margin-top:.3rem;min-height:104px;height:104px;display:flex;align-items:center}
+.pr-cta-box{margin-top:auto;padding-top:.4rem;width:100%}
 .pr-guar{margin-top:clamp(2.5rem,5vw,3.5rem);background:rgba(200,125,59,.06);border:1px solid var(--ln);border-radius:16px;padding:1.3rem 1.8rem;display:flex;align-items:center;gap:1.2rem;justify-content:center;text-align:left}
 .pr-guar svg{width:28px;height:28px;flex:none;color:var(--am)}
 .pr-guar p{font-size:.9rem;color:var(--ink);margin:0;max-width:none;line-height:1.6}
@@ -257,7 +259,7 @@ body{background:#fff}
 .pr-terms-card ul{list-style:none;padding:0;margin:0;display:grid;gap:.55rem}
 .pr-terms-card li{font-size:.84rem;color:var(--ink);line-height:1.55;display:flex;align-items:flex-start;gap:.5rem}
 .pr-terms-card li::before{content:'•';color:var(--am);font-weight:700}
-@media(max-width:980px){.price-grid{grid-template-columns:1fr;max-width:480px;margin:2rem auto 0}.pr-guar{flex-direction:column;text-align:center}.pr-terms-box{grid-template-columns:1fr}}
+@media(max-width:980px){.price-grid{grid-template-columns:1fr;max-width:480px;margin:2rem auto 0}.pr-tier,.pr-card h3,.pr-desc,.pr-price-box,.pr-ret-wrap,.pr-sla,.pr-card > .pr-features:first-of-type,.pr-card > .pr-features:last-of-type,.pr-scope-tag{height:auto;min-height:auto}.pr-guar{flex-direction:column;text-align:center}.pr-terms-box{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -453,7 +455,7 @@ body{background:#fff}
 <!-- Service Pillar B: Custom CRM Development (Featured) -->
 <article class="pr-card featured rv">
 <span class="pop-badge">★ High Impact · Centralized Operations</span>
-<span class="pr-tier">Service B · Customer &amp; Pipeline Systems</span>
+<span class="pr-tier">Service B · CRM &amp; Pipeline Systems</span>
 <h3>Custom CRM Development</h3>
 <p class="pr-desc">Customer relationship management systems adapted directly to your business workflows. Organize leads, track sales pipelines, and eliminate SaaS seat fees.</p>
 <div class="pr-price-box">
@@ -491,7 +493,7 @@ body{background:#fff}
 
 <!-- Service Pillar C: Backend Revenue Engine -->
 <article class="pr-card rv">
-<span class="pr-tier">Service C · Connective Plumbing &amp; Automation</span>
+<span class="pr-tier">Service C · Backend Automation Engine</span>
 <h3>Backend Revenue Engine</h3>
 <p class="pr-desc">The connective backend infrastructure, APIs, and automated workflows that connect systems, process data, and eliminate repetitive manual work.</p>
 <div class="pr-price-box">
@@ -580,9 +582,6 @@ body{background:#fff}
 <li><span>Meta Cloud API Integration</span></li>
 <li><span>Dedicated Client Database</span></li>
 <li><span>No Third-Party Ad Brokering</span></li>
-<li><button type="button" class="ft-inline-link" data-modal="privacy">Privacy &amp; Data Handling Policy</button></li>
-<li><button type="button" class="ft-inline-link" data-modal="terms">Terms of Service SLA</button></li>
-<li><button type="button" class="ft-inline-link" data-modal="payments">Payment Terms &amp; Cancellation</button></li>
 </ul>
 </div>
 
