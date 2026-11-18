@@ -223,15 +223,36 @@ body{background:#fff}
 .pr-ret{font-weight:600}
 .pr-sla{display:inline-flex;align-items:center;gap:.45rem;font:500 .76rem var(--m);color:var(--ink);background:rgba(255,255,255,.025);padding:5px 11px;border-radius:6px;border:1px solid var(--ln)}
 .pr-features{list-style:none;padding:0;margin:0;display:grid;gap:.65rem;flex:1}
-.pr-features li{font-size:.88rem;line-height:1.5;color:var(--ink);display:flex;align-items:flex-start;gap:.6rem}
+.pr-features li{font-size:.86rem;line-height:1.5;color:var(--ink);display:flex;align-items:flex-start;gap:.6rem}
 .pr-features li svg{width:15px;height:15px;flex:none;color:var(--am);margin-top:.2rem}
 .pr-features li.dim{color:var(--soft);font-size:.82rem}
+.pr-grp-title{font:700 .72rem var(--m);text-transform:uppercase;letter-spacing:.09em;color:var(--am);margin-top:.6rem;display:flex;align-items:center;gap:.45rem}
+.pr-grp-title::after{content:'';flex:1;height:1px;background:var(--ln)}
+.pr-scope-tag{font:500 .72rem var(--m);color:var(--soft);background:rgba(255,255,255,.03);padding:7px 11px;border-radius:6px;border:1px dashed var(--ln);line-height:1.45;margin-top:.3rem}
 .pr-cta-box{margin-top:auto;padding-top:.4rem}
 .pr-guar{margin-top:clamp(2.5rem,5vw,3.5rem);background:rgba(200,125,59,.06);border:1px solid var(--ln);border-radius:16px;padding:1.3rem 1.8rem;display:flex;align-items:center;gap:1.2rem;justify-content:center;text-align:left}
 .pr-guar svg{width:28px;height:28px;flex:none;color:var(--am)}
 .pr-guar p{font-size:.9rem;color:var(--ink);margin:0;max-width:none;line-height:1.6}
 .pr-guar b{color:var(--am)}
-@media(max-width:980px){.price-grid{grid-template-columns:1fr;max-width:480px;margin:2rem auto 0}.pr-guar{flex-direction:column;text-align:center}}
+.pr-terms-box{margin-top:clamp(2.5rem,5vw,3.5rem);display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1rem,2vw,1.5rem)}
+.pr-terms-card{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:1.4rem 1.6rem;display:flex;flex-direction:column;gap:.75rem}
+.pr-terms-card h4{font-size:1.15rem;margin:0;color:var(--ink);display:flex;align-items:center;gap:.5rem}
+.pr-terms-card h4 svg{width:18px;height:18px;color:var(--am);flex:none}
+.pr-terms-card ul{list-style:none;padding:0;margin:0;display:grid;gap:.55rem}
+.pr-terms-card li{font-size:.84rem;color:var(--ink);line-height:1.55;display:flex;align-items:flex-start;gap:.5rem}
+.pr-terms-card li::before{content:'•';color:var(--am);font-weight:700}
+.pr-faq-sec{margin-top:clamp(2.5rem,5vw,3.5rem)}
+.pr-faq-head{text-align:center;margin-bottom:1.8rem}
+.pr-faq-head h3{font-size:clamp(1.5rem,2.8vw,2rem);margin:.4rem 0 0}
+.pr-faq-list{display:grid;gap:.8rem;max-width:880px;margin:0 auto}
+.pr-faq-item{background:var(--sf);border:1px solid var(--ln);border-radius:12px;overflow:hidden;transition:border-color .2s}
+.pr-faq-item[open]{border-color:var(--cu)}
+.pr-faq-summary{padding:1rem 1.3rem;font-weight:600;font-size:.92rem;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none}
+.pr-faq-summary::-webkit-details-marker{display:none}
+.pr-faq-summary::after{content:'+';font-size:1.3rem;color:var(--am);font-weight:400;transition:transform .2s}
+.pr-faq-item[open] .pr-faq-summary::after{content:'−';color:var(--cu)}
+.pr-faq-body{padding:0 1.3rem 1.1rem;font-size:.86rem;color:var(--soft);line-height:1.6;border-top:1px solid rgba(255,255,255,.04);margin-top:.4rem;padding-top:.8rem}
+@media(max-width:980px){.price-grid{grid-template-columns:1fr;max-width:480px;margin:2rem auto 0}.pr-guar{flex-direction:column;text-align:center}.pr-terms-box{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -318,14 +339,14 @@ body{background:#fff}
 <div class="cur-box">
 <span>Base currency</span>
 <div class="cur-seg" role="group" aria-label="Select currency">
-<button type="button" class="cur-btn" data-cur="USD" aria-pressed="true">$ USD</button>
-<button type="button" class="cur-btn" data-cur="INR" aria-pressed="false">₹ INR</button>
+<button type="button" class="cur-btn" data-cur="INR" aria-pressed="true">₹ INR</button>
+<button type="button" class="cur-btn" data-cur="USD" aria-pressed="false">$ USD</button>
 <button type="button" class="cur-btn" data-cur="GBP" aria-pressed="false">£ GBP</button>
 </div>
 </div>
-<label for="sp">Monthly ad spend <output id="spo"></output></label><input id="sp" type="range" min="1000" max="50000" step="500" value="12000">
+<label for="sp">Monthly ad spend <output id="spo"></output></label><input id="sp" type="range" min="50000" max="2500000" step="25000" value="500000">
 <label for="ld">Monthly inbound leads <output id="ldo"></output></label><input id="ld" type="range" min="20" max="1000" step="10" value="200">
-<label for="dv">Average deal value <output id="dvo"></output></label><input id="dv" type="range" min="1000" max="50000" step="500" value="8000">
+<label for="dv">Average deal value <output id="dvo"></output></label><input id="dv" type="range" min="50000" max="5000000" step="50000" value="800000">
 <label for="cr">Close rate on contacted leads <output id="cro"></output></label><input id="cr" type="range" min="5" max="40" step="1" value="20">
 <fieldset><legend>Current response time</legend>
 <div class="rt">
@@ -349,106 +370,141 @@ body{background:#fff}
 <section class="wrap pricing-sec" id="pricing" aria-labelledby="h-pr">
 <div class="pr-head rv">
 <p class="mono">Investment &amp; Systems Architecture</p>
-<h2 id="h-pr">Choose your growth engine. Fixed setup. Zero guesswork.</h2>
-<p>Every system captures after-hours inquiries in under 15 seconds, plugs revenue leaks, and auto-syncs with your team. Select the infrastructure engineered for your scale.</p>
+<h2 id="h-pr">Structured setup. Fixed retainer. Zero guesswork.</h2>
+<p>Every deployment eliminates after-hours lead decay within 15 seconds, qualifies prospects automatically, and syncs directly with your team. Select the infrastructure engineered for your scale.</p>
 <div class="cur-box" style="margin:1.4rem auto 0;justify-content:center">
 <span>Display currency</span>
 <div class="cur-seg" role="group" aria-label="Select pricing currency">
-<button type="button" class="cur-btn" data-cur="USD" aria-pressed="true">$ USD</button>
-<button type="button" class="cur-btn" data-cur="INR" aria-pressed="false">₹ INR</button>
+<button type="button" class="cur-btn" data-cur="INR" aria-pressed="true">₹ INR</button>
+<button type="button" class="cur-btn" data-cur="USD" aria-pressed="false">$ USD</button>
 <button type="button" class="cur-btn" data-cur="GBP" aria-pressed="false">£ GBP</button>
 </div>
 </div>
 </div>
 
 <div class="price-grid">
-<!-- Tier 1: Speed-to-Lead Core -->
+<!-- Tier 1: Foundation -->
 <article class="pr-card rv">
-<span class="pr-tier">Tier 01 · Single Studio &amp; Clinic</span>
-<h3>Speed-to-Lead Core</h3>
-<p class="pr-desc">Stop losing after-hours leads to slow callbacks. Auto-respond and qualify on WhatsApp in seconds.</p>
+<span class="pr-tier">Tier 01 · Essential Inbound Bridge</span>
+<h3>Foundation</h3>
+<p class="pr-desc">Speed-to-lead automation for single-location studios, clinics, and firms to immediately qualify and capture after-hours inquiries.</p>
 <div class="pr-price-box">
 <div class="pr-amount">
-<span class="pr-val" data-usd="$499" data-inr="₹24,999" data-gbp="£399">₹24,999</span>
+<span class="pr-val" data-usd="$95" data-inr="₹7,500" data-gbp="£75">₹7,500</span>
 <span class="pr-term">setup</span>
 </div>
 <div class="pr-ret-wrap">
-<span class="pr-ret" data-usd="+$99/mo" data-inr="+₹4,999/mo" data-gbp="+£79/mo">+₹4,999/mo</span>
-<span>hosting &amp; API maintenance</span>
+<span class="pr-ret" data-usd="+$45/mo" data-inr="+₹3,500/mo" data-gbp="+£35/mo">+₹3,500/mo</span>
+<span>monthly retainer</span>
 </div>
 </div>
-<div class="pr-sla">⚡ 5–7 Days Delivery · 30-Day SLA</div>
+<div class="pr-sla">⚡ 3–5 Days Setup · Up to 2 hrs/mo Support SLA</div>
+
+<div class="pr-grp-title">Setup Deliverables (One-Time)</div>
 <ul class="pr-features">
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>15-Second WhatsApp Auto-Responder</b> (Official Meta Cloud API)</span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Instant Catalog &amp; 2026 Lookbook Auto-Sender</b> to client's phone</span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>3-Tap Lead Qualification</b> (Budget, project size &amp; timeline)</span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Instant Sales Rep WhatsApp Alerts</b> with full prospect dossier</span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>1-Tap Google Maps Showroom Booking</b> to drive physical footfall</span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Weekly Inbound Speed &amp; Lead Conversion Analytics Report</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Sub-15s WhatsApp Inbound Auto-Responder</b> (Official Meta Cloud API bridge)</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>3-Step Lead Qualification Triage</b> (Service need, budget bracket, timeline)</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Instant Digital Catalog &amp; Lookbook Auto-Sender</b> to prospect mobile phone</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Real-Time Sales Rep Lead Alerts</b> (Instant WhatsApp/Telegram alert to 1 rep)</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Structured Google Sheet Intake Logging</b> with formula-safe data hygiene</span></li>
 </ul>
+
+<div class="pr-grp-title">Ongoing Monthly Services</div>
+<ul class="pr-features">
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Cloud API Bridge Hosting &amp; Webhook Uptime Monitoring</b></span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Up to 2 Hours Monthly Maintenance</b> (Minor template updates &amp; bug fixes)</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Monthly Inbound Velocity Summary (Lead volume &amp; response telemetry)</span></li>
+</ul>
+
+<div class="pr-scope-tag"><b>Scope Limit:</b> 1 channel · 1 alert recipient · Excludes custom CRM sync &amp; ad spend · Meta API fees billed directly by Meta</div>
+
 <div class="pr-cta-box">
-<button class="btn b2" type="button" data-plan="Speed-to-Lead Core" data-open style="width:100%">Select Core Engine →</button>
+<button class="btn b2" type="button" data-plan="Foundation" data-open style="width:100%">Deploy Foundation Engine →</button>
 </div>
 </article>
 
-<!-- Tier 2: Regional Growth Stack (Featured) -->
+<!-- Tier 2: Growth (Featured) -->
 <article class="pr-card featured rv">
-<span class="pop-badge">★ Most Popular · Regional Scaler</span>
-<span class="pr-tier">Tier 02 · Full Pipeline Engine</span>
-<h3>Regional Growth Stack</h3>
-<p class="pr-desc">The complete conversion engine from ad click to signed quote. Our most deployed system.</p>
+<span class="pop-badge">★ Most Popular · Full Pipeline Sync</span>
+<span class="pr-tier">Tier 02 · Regional Scaler</span>
+<h3>Growth</h3>
+<p class="pr-desc">Bi-directional CRM integration and interactive qualification for active ad spenders scaling multi-person sales pipelines.</p>
 <div class="pr-price-box">
 <div class="pr-amount">
-<span class="pr-val" data-usd="$1,250" data-inr="₹65,000" data-gbp="£990">₹65,000</span>
+<span class="pr-val" data-usd="$155" data-inr="₹12,500" data-gbp="£120">₹12,500</span>
 <span class="pr-term">setup</span>
 </div>
 <div class="pr-ret-wrap">
-<span class="pr-ret" data-usd="+$299/mo" data-inr="+₹14,999/mo" data-gbp="+£240/mo">+₹14,999/mo</span>
-<span>infrastructure &amp; CRM SLA</span>
+<span class="pr-ret" data-usd="+$80/mo" data-inr="+₹6,500/mo" data-gbp="+£65/mo">+₹6,500/mo</span>
+<span>monthly retainer</span>
 </div>
 </div>
-<div class="pr-sla" style="border-color:rgba(234,168,115,.4);color:var(--am)">⚡ 14 Days Delivery · 60-Day Full Warranty</div>
+<div class="pr-sla" style="border-color:rgba(234,168,115,.4);color:var(--am)">⚡ 7–10 Days Setup · Up to 5 hrs/mo Support SLA</div>
+
+<div class="pr-grp-title">Setup Deliverables (Everything in Foundation, PLUS:)</div>
 <ul class="pr-features">
-<li class="dim"><span>Everything in Speed-to-Lead Core, PLUS:</span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Interactive 60-Second Web Cost Estimator</b> on your website</span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Dynamic WhatsApp PDF Quotation Engine</b> delivered instantly</span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Two-Way CRM Synchronization</b> (Zoho / LeadSquared / HubSpot)</span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Multi-Studio Geographic Territory Lead Routing</b> by city &amp; pincode</span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Instagram DM to WhatsApp Direct Bridge</b> to convert social traffic</span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Front-Desk Video SOPs &amp; Live Team Zoom Walkthrough</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Two-Way CRM Webhook Synchronization</b> (Zoho CRM / LeadSquared / HubSpot)</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Interactive 60-Second Web Qualification Widget</b> embedded on website</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Dynamic WhatsApp PDF Quotation &amp; Estimate Engine</b></span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Multi-Territory / Multi-Staff Routing</b> (Distribute to up to 5 team reps)</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Automated Follow-Up Nurture Sequence</b> (Day 1 / Day 3 / Day 7 re-engagement)</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Front-Desk Video SOPs &amp; Live Team Handover Walkthrough</span></li>
 </ul>
+
+<div class="pr-grp-title">Ongoing Monthly Services</div>
+<ul class="pr-features">
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Continuous CRM API Sync Maintenance &amp; Token Re-authorization</b></span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Up to 5 Hours Monthly Engineering Support &amp; Logic Tuning</b></span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Bi-Weekly Pipeline Velocity &amp; Conversion Bottleneck Reports</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Priority Business-Day Support SLA (24-Hour response guarantee)</span></li>
+</ul>
+
+<div class="pr-scope-tag"><b>Scope Limit:</b> Up to 5 reps · 1 CRM instance · Excludes custom mobile apps &amp; ERP migrations · CRM seats &amp; ad spend client-managed</div>
+
 <div class="pr-cta-box">
-<button class="btn b1" type="button" data-plan="Regional Growth Stack" data-open style="width:100%;box-shadow:0 0 20px rgba(200,125,59,.35)">Deploy Growth Stack →</button>
+<button class="btn b1" type="button" data-plan="Growth" data-open style="width:100%;box-shadow:0 0 20px rgba(200,125,59,.35)">Deploy Growth Engine →</button>
 </div>
 </article>
 
-<!-- Tier 3: Enterprise Tech Partner -->
+<!-- Tier 3: Advanced -->
 <article class="pr-card rv">
-<span class="pr-tier">Tier 03 · Multi-Branch &amp; Franchise</span>
-<h3>Enterprise Tech Partner</h3>
-<p class="pr-desc">Bespoke mobile applications and dedicated senior systems engineering for regional networks.</p>
+<span class="pr-tier">Tier 03 · Custom Architecture</span>
+<h3>Advanced</h3>
+<p class="pr-desc">Bespoke application engineering, multi-branch network routing, and dedicated SLA for high-volume enterprise operations.</p>
 <div class="pr-price-box">
 <div class="pr-amount">
-<span class="pr-val" data-usd="$2,850" data-inr="₹1,45,000" data-gbp="£2,250">₹1,45,000</span>
+<span class="pr-val" data-usd="$245+" data-inr="₹20,000+" data-gbp="£195+">₹20,000+</span>
 <span class="pr-term">setup</span>
 </div>
 <div class="pr-ret-wrap">
-<span class="pr-ret" data-usd="+$599/mo" data-inr="+₹29,999/mo" data-gbp="+£480/mo">+₹29,999/mo</span>
-<span>dedicated engineering retainer</span>
+<span class="pr-ret" data-usd="+$125–$185+/mo" data-inr="+₹10,000–₹15,000+/mo" data-gbp="+£95–£145+/mo">+₹10,000–₹15,000+/mo</span>
+<span>monthly retainer</span>
 </div>
 </div>
-<div class="pr-sla">⚡ 28 Days Delivery · 1-Hour SLA Emergency Line</div>
+<div class="pr-sla">⚡ Custom Scoped Delivery · Up to 12 hrs/mo SLA Allocation</div>
+
+<div class="pr-grp-title">Setup Deliverables (Everything in Growth, PLUS Custom SOW:)</div>
 <ul class="pr-features">
-<li class="dim"><span>Everything in Regional Growth Stack, PLUS:</span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Designer Field Sales Tablet App</b> (Quote clients on home visits)</span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Offline Room Measurement &amp; Photo Intake Portal</b></span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Post-Sale Woodwork &amp; Installation Progress Tracking Portal</b></span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>24/7 AI Voice &amp; Chat Concierge</b> (English, Tamil, Hindi)</span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Dedicated Systems Engineer Assigned</b> on WhatsApp / Slack</span></li>
-<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>99.98% High-Availability Uptime SLA with 1-Hour Emergency Response</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Custom Offline-First Field Sales PWA / Tablet Quoting Interface</b></span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Multi-Branch Franchise Master Routing Engine</b> with regional permissions</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Custom Database Architecture &amp; Deep ERP/CRM Data Pipelines</b></span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Multilingual AI-Assisted Qualification Triage</b> (English &amp; Regional)</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Dedicated Staging Sandbox &amp; End-to-End Security Audit</b></span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Executive &amp; Staff Role-Based Video Training Library</span></li>
 </ul>
+
+<div class="pr-grp-title">Ongoing Monthly Services</div>
+<ul class="pr-features">
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>Dedicated Systems Engineer Allocation</b> (Up to 12 hrs/mo active development)</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span><b>High-Availability Infrastructure SLA (99.9% Uptime Guarantee)</b></span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Priority 2-Hour Emergency Response Line (WhatsApp / Slack)</span></li>
+<li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>Weekly Pipeline Forensic Audits &amp; Proactive Failover Maintenance</span></li>
+</ul>
+
+<div class="pr-scope-tag"><b>Scope Limit:</b> Strictly bounded by signed SOW · Third-party cloud compute &amp; enterprise API tiers billed directly to client</div>
+
 <div class="pr-cta-box">
-<button class="btn b2" type="button" data-plan="Enterprise Tech Partner" data-open style="width:100%">Request Enterprise Audit →</button>
+<button class="btn b2" type="button" data-plan="Advanced" data-open style="width:100%">Request Custom Architecture Quote →</button>
 </div>
 </article>
 </div>
@@ -456,6 +512,67 @@ body{background:#fff}
 <div class="pr-guar rv">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
 <p><b>The 30-Day Speed Benchmark Guarantee:</b> If automated first-response latency on your digital ad campaigns is not under 60 seconds within 30 days of launch, our engineering team works for free until the benchmark is verified. Zero client risk.</p>
+</div>
+
+<!-- Transparent Commercial Terms -->
+<div class="pr-terms-box rv">
+<div class="pr-terms-card">
+<h4><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>Payment Terms</h4>
+<ul>
+<li><b>Setup Fee Milestone:</b> 50% payable upfront before architectural work begins; remaining 50% payable upon completion and before final handover or live activation.</li>
+<li><b>Monthly Retainer:</b> Billed in advance, starting immediately after implementation, testing, and handover.</li>
+<li><b>Payment Schedule:</b> All invoices are payable within 7 calendar days of issuance unless otherwise agreed in writing.</li>
+<li><b>Statutory Taxes:</b> Goods and Services Tax (GST), where applicable, is charged additionally.</li>
+<li><b>Third-Party Expenses:</b> Subscriptions (Meta WhatsApp Cloud API, CRM user seats, hosting), API charges, and advertising expenditure are client-funded.</li>
+<li><b>Late Payments:</b> Overdue balances may result in a temporary suspension of webhook relays and services after written notice.</li>
+</ul>
+</div>
+
+<div class="pr-terms-card">
+<h4><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>Cancellation &amp; Termination Policy</h4>
+<ul>
+<li><b>Notice Period:</b> Clients may cancel their monthly retainer by providing 30 calendar days' written notice to growth.veqtro@gmail.com.</li>
+<li><b>Services During Notice:</b> The retainer remains payable during the 30-day notice period, and all monitoring and support services continue active.</li>
+<li><b>Setup Fee Non-Refundability:</b> Setup fees are non-refundable once implementation work commences, except where required by applicable law or written agreement.</li>
+<li><b>Settlement on Exit:</b> Payments for completed work, delivered milestones, and approved expenses remain payable. Deliverables are handed over upon full invoice settlement.</li>
+<li><b>Transition Assistance:</b> Custom data export, migration, or extended handover beyond agreed scope is quoted separately.</li>
+<li><b>Material Breach:</b> Either party may terminate if a material breach remains unresolved after 15 days' written notice. Prepaid fees are handled per contract and applicable law.</li>
+</ul>
+</div>
+</div>
+
+<!-- Frequently Asked Questions -->
+<div class="pr-faq-sec rv">
+<div class="pr-faq-head">
+<p class="mono">Clear Scope Boundaries</p>
+<h3>Frequently Asked Questions</h3>
+</div>
+<div class="pr-faq-list">
+<details class="pr-faq-item">
+<summary class="pr-faq-summary">What is the difference between the One-Time Setup and the Monthly Retainer?</summary>
+<div class="pr-faq-body">The One-Time Setup fee covers the complete engineering, custom configuration, qualification triage scripting, webhook testing, and staff handover. The ongoing Monthly Retainer covers continuous cloud API bridge hosting, uptime monitoring, bug patches, regular pipeline performance reports, and dedicated monthly engineering support hours (2 hrs for Foundation, 5 hrs for Growth, 12 hrs for Advanced) to optimize your conversion rates.</div>
+</details>
+
+<details class="pr-faq-item">
+<summary class="pr-faq-summary">What are the payment milestones and billing terms?</summary>
+<div class="pr-faq-body">All projects require a 50% deposit upfront before engineering begins, with the remaining 50% due upon completion prior to production activation and credential handover. Monthly retainers are billed in advance starting after system handover. Invoices are payable within 7 calendar days. GST (18%) is additional where applicable.</div>
+</details>
+
+<details class="pr-faq-item">
+<summary class="pr-faq-summary">How does cancellation work if our business needs change?</summary>
+<div class="pr-faq-body">You may cancel your monthly retainer at any time by providing 30 days' written notice. The retainer remains payable and active throughout the 30-day notice period so your lead pipelines suffer zero disruption. Setup fees are non-refundable once implementation commences. On termination, you retain full ownership of all conversation logs, CRM records, and configurations upon settlement of outstanding invoices.</div>
+</details>
+
+<details class="pr-faq-item">
+<summary class="pr-faq-summary">Are Meta WhatsApp conversation fees and CRM subscriptions included?</summary>
+<div class="pr-faq-body">No. Third-party software subscriptions (such as your CRM user licenses on Zoho, HubSpot, or LeadSquared) and Meta WhatsApp Cloud API conversation usage are billed directly by the respective platforms to your company card. VEQTRO engineers, connects, and monitors the infrastructure layer.</div>
+</details>
+
+<details class="pr-faq-item">
+<summary class="pr-faq-summary">What happens if we need custom features or exceed our monthly support hours?</summary>
+<div class="pr-faq-body">We maintain strict scope boundaries to ensure consistent delivery. If you need custom modules, extra territory branches, or hours beyond your monthly package allocation, we provide a written estimate at our standard out-of-scope rate (₹1,500/hour) for your approval before proceeding. No surprise bills.</div>
+</details>
+</div>
 </div>
 </section>
 
@@ -576,13 +693,19 @@ body{background:#fff}
 </div>
 <div id="lp-terms" class="legal-body" hidden>
 <h4>1. Scope of Managed Infrastructure</h4>
-<p>VEQTRO engineers, deploys, and monitors bespoke growth infrastructure for high-ticket clients. Deliverables include sub-10 second speed-to-lead qualification engines, bi-directional CRM webhook synchronization, offline field sales PWAs, and custom revenue estimators.</p>
-<h4>2. 99.98% Intake Engine SLA</h4>
-<p>VEQTRO guarantees a 99.98% uptime SLA on automated webhook intake relays. Dedicated senior infrastructure engineers monitor latency round-the-clock with automated fallback failover pipelines.</p>
-<h4>3. 100% Client Intellectual Property &amp; Data Ownership</h4>
-<p>The client retains exclusive and perpetual ownership of all CRM records, customer conversation histories, brand assets, and custom qualification state machines deployed into their infrastructure.</p>
-<h4>4. Deployment Cap &amp; White-Glove Support</h4>
-<p>Deployments are strictly capped at 4 enterprise rollouts per month to ensure dedicated infrastructure engineering capacity and white-glove onboarding for every client.</p>
+<p>VEQTRO engineers, deploys, and monitors bespoke growth infrastructure for high-ticket service businesses across Architecture &amp; Interiors, Specialized Clinics &amp; Healthcare, Legal &amp; Financial Advisory, and Premium B2B services. Deliverables are defined by package tier (Foundation, Growth, or Advanced) and strictly adapted to the signed proposal or Statement of Work (SOW). No package implies or provides unlimited development, unlimited support, or unlisted software licenses.</p>
+
+<h4>2. Setup vs. Ongoing Monthly Retainer</h4>
+<p>Each tier comprises a fixed one-time setup implementation fee followed by an ongoing monthly maintenance retainer. The setup fee covers architecture, workflow configuration, qualification triage scripting, and team handover. The monthly retainer covers cloud API bridge hosting, uptime monitoring, security patches, monthly/bi-weekly velocity reporting, and a capped monthly engineering support allocation (2 hours for Foundation, 5 hours for Growth, 12 hours for Advanced). Additional engineering hours or out-of-scope modules are quoted separately at standard rate cards.</p>
+
+<h4>3. Commercial Payment Terms</h4>
+<p>Setup fees are structured on a milestone basis: 50% payable upfront prior to commencement of engineering work, and the remaining 50% payable upon completion of implementation and before final production handover or live credential activation. Monthly retainers are billed in advance for each 30-day service cycle, commencing after system handover. All invoices are payable within 7 calendar days of issuance unless otherwise agreed in writing. Statutory taxes, including Goods and Services Tax (GST) where applicable, are additional. Third-party subscriptions (Meta WhatsApp Cloud API credits, CRM user licenses, domain/hosting compute) and advertising expenditure are funded directly by the client. Late or overdue payments past notice may result in temporary suspension of webhook relays and services.</p>
+
+<h4>4. Cancellation, Termination &amp; Refund Policy</h4>
+<p>Clients may cancel their ongoing monthly retainer at any time by providing 30 calendar days' written notice to growth.veqtro@gmail.com. The monthly retainer remains payable during the 30-day notice period, and all monitoring and support services continue active throughout that window. Setup fees are strictly non-refundable once implementation work has commenced, except where required by applicable consumer protection law or agreed otherwise in writing. Payments for completed work, delivered milestones, and approved expenses remain payable. On termination and subject to settlement of all outstanding invoices, VEQTRO will deliver all agreed completed deliverables. Any data export, migration, or transition assistance beyond the agreed scope will be quoted separately. Either party may terminate for material breach unresolved after 15 days' written notice. Prepaid monthly fees are not automatically refundable; any applicable refund will be handled according to the agreed contract and applicable law.</p>
+
+<h4>5. 100% Client Intellectual Property &amp; Data Ownership</h4>
+<p>The client retains exclusive, perpetual ownership of all CRM records, customer conversation histories, brand assets, and custom qualification state machines deployed into their infrastructure. VEQTRO operates as a zero-retention transit layer.</p>
 </div>
 <div class="dlg-foot">
 <span class="mono">VEQTRO AI Inc. · Legal &amp; Security Compliance</span>
@@ -709,7 +832,7 @@ USD:{symbol:'$',code:'USD',locale:'en-US',spMin:1000,spMax:50000,spStep:500,spDe
 INR:{symbol:'₹',code:'INR',locale:'en-IN',spMin:50000,spMax:2500000,spStep:25000,spDef:500000,dvMin:50000,dvMax:5000000,dvStep:50000,dvDef:800000},
 GBP:{symbol:'£',code:'GBP',locale:'en-GB',spMin:1000,spMax:40000,spStep:500,spDef:10000,dvMin:1000,dvMax:40000,dvStep:500,dvDef:7000}
 };
-let activeCur='USD';
+let activeCur='INR';
 const curSaved={USD:{sp:12000,dv:8000},INR:{sp:500000,dv:800000},GBP:{sp:10000,dv:7000}};
 const fm=n=>{const c=CURRENCIES[activeCur];return c.symbol+Math.round(n).toLocaleString(c.locale)};
 const RTL={12:'Under 5 min',38:'30–60 min',65:'2–4 hours',84:'Next day'};
